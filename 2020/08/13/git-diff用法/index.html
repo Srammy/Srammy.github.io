@@ -8,18 +8,28 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>git diff用法 | Srammy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git diff的使用1 不add修改提交后修改了工作区，但是没有add到暂存区   git diff">
+  <meta name="description" content="git diff的使用1 不add修改提交后修改了工作区，但是没有add到暂存区  git diff">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git diff用法">
 <meta property="og:url" content="http://yoursite.com/2020/08/13/git-diff%E7%94%A8%E6%B3%95/index.html">
 <meta property="og:site_name" content="Srammy&#39;s Blog">
-<meta property="og:description" content="git diff的使用1 不add修改提交后修改了工作区，但是没有add到暂存区   git diff">
+<meta property="og:description" content="git diff的使用1 不add修改提交后修改了工作区，但是没有add到暂存区  git diff">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/%E6%8F%90%E4%BA%A4%E5%90%8E%E4%BF%AE%E6%94%B9%E5%B7%A5%E4%BD%9C%E5%8C%BA.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/git-diff.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/git-diff-HEAD.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/git_diif_--cached.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/add%E4%BF%AE%E6%94%B9.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/add%E5%90%8Egit_diff.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/add%E5%90%8Egit_diff_HEAD.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/add%E5%90%8Egit_diff_--cached.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/git_diff%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6.jpg">
 <meta property="article:published_time" content="2020-08-13T12:58:38.000Z">
-<meta property="article:modified_time" content="2020-08-13T14:23:13.567Z">
+<meta property="article:modified_time" content="2020-08-14T01:04:05.827Z">
 <meta property="article:author" content="Srammy">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/%E6%8F%90%E4%BA%A4%E5%90%8E%E4%BF%AE%E6%94%B9%E5%B7%A5%E4%BD%9C%E5%8C%BA.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Srammy&#39;s Blog" type="application/atom+xml">
   
@@ -64,7 +74,7 @@
 		</nav>
 
 		<nav>
-			总文章数 2
+			总文章数 1
 		</nav>
 		
 		<nav class="header-smart-menu">
@@ -165,31 +175,22 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="git-diff的使用"><a href="#git-diff的使用" class="headerlink" title="git diff的使用"></a>git diff的使用</h1><h2 id="1-不add修改"><a href="#1-不add修改" class="headerlink" title="1 不add修改"></a>1 不add修改</h2><p>提交后修改了工作区，但是没有add到暂存区</p>
-
-
-<h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3>
-
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/%E6%8F%90%E4%BA%A4%E5%90%8E%E4%BF%AE%E6%94%B9%E5%B7%A5%E4%BD%9C%E5%8C%BA.jpg"></p>
+<h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3><p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/git-diff.jpg"></p>
 <a id="more"></a>
 
-<h3 id="git-diff-HEAD"><a href="#git-diff-HEAD" class="headerlink" title="git diff HEAD"></a>git diff HEAD</h3>
-
-<h3 id="git-diff-–cached"><a href="#git-diff-–cached" class="headerlink" title="git diff –cached"></a>git diff –cached</h3>
-
-<p>git diff：是查看 workspace（工作区） 与 index（暂存区） 的差别的。<br>git diff –cached：是查看 index（暂存区） 与 local repositorty（本地仓库） 的差别的。<br>git diff HEAD：是查看 workspace 和 local repository 的差别的。（HEAD 指向的是 local repository 中最新提交的版本）</p>
-<h2 id="2-add修改，但是没有commit"><a href="#2-add修改，但是没有commit" class="headerlink" title="2 add修改，但是没有commit"></a>2 add修改，但是没有commit</h2>
-
+<h3 id="git-diff-HEAD"><a href="#git-diff-HEAD" class="headerlink" title="git diff HEAD"></a>git diff HEAD</h3><p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/git-diff-HEAD.jpg"></p>
+<h3 id="git-diff-–cached"><a href="#git-diff-–cached" class="headerlink" title="git diff –cached"></a>git diff –cached</h3><p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/git_diif_--cached.jpg"></p>
+<p><strong>git diff：是查看 workspace（工作区） 与 index（暂存区） 的差别的。</strong><br><strong>git diff –cached：是查看 index（暂存区） 与 local repositorty（本地仓库） 的差别的。</strong><br><strong>git diff HEAD：是查看 workspace 和 local repository 的差别的。（HEAD 指向的是 local repository 中最新提交的版本）</strong></p>
+<h2 id="2-add修改，但是没有commit"><a href="#2-add修改，但是没有commit" class="headerlink" title="2 add修改，但是没有commit"></a>2 add修改，但是没有commit</h2><p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/add%E4%BF%AE%E6%94%B9.jpg"></p>
 <h3 id="git-diff-1"><a href="#git-diff-1" class="headerlink" title="git diff"></a>git diff</h3><p>add后工作区与暂存区没有区别</p>
-
-
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/add%E5%90%8Egit_diff.jpg"></p>
 <h3 id="git-diff-HEAD-1"><a href="#git-diff-HEAD-1" class="headerlink" title="git diff HEAD"></a>git diff HEAD</h3><p>add后工作区和 local repository是有区别的， local repository存放的是未修改的版本（没有commit修改）。</p>
-
-
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/add%E5%90%8Egit_diff_HEAD.jpg"></p>
 <h3 id="git-diff-–cached-1"><a href="#git-diff-–cached-1" class="headerlink" title="git diff –cached"></a>git diff –cached</h3><p>index（暂存区） 与 local repositorty（本地仓库）是有区别的。index存放的是修改后的版本，因为add了修改</p>
-
-
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/add%E5%90%8Egit_diff_--cached.jpg"></p>
 <h3 id="git-diff查看指定文件的区别"><a href="#git-diff查看指定文件的区别" class="headerlink" title="git diff查看指定文件的区别"></a>git diff查看指定文件的区别</h3><p>上方的文件作了修改，所以有变化。下方的文件没有修改，所以没有变化。</p>
-
-
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/git_diff%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6.jpg"></p>
 
       
 
@@ -271,20 +272,6 @@
 </article>
 
   
-<nav id="article-nav">
-  
-    <a href="/2020/08/13/test/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          test
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -409,10 +396,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PIC</a>
               </li>
             
             <div class="clearfix"></div>
