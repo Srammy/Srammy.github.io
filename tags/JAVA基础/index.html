@@ -6,19 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ServletContext接口 | Srammy&#39;s Blog</title>
+  <title>Tag: JAVA基础 | Srammy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原视频地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vb41187jH?p&#x3D;26  javax.servlet.ServletContext接口，Servlet规范  Tomcat服务器对ServletContext接口的实现类的完整类名：org.apache.catalina.core.ApplicationContextFacade javaweb程序员还是只需要面">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ServletContext接口">
-<meta property="og:url" content="http://yoursite.com/2020/08/14/ServletContext%E6%8E%A5%E5%8F%A3/index.html">
+  <meta name="description" content="个人博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Srammy&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/tags/JAVA%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Srammy&#39;s Blog">
-<meta property="og:description" content="原视频地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vb41187jH?p&#x3D;26  javax.servlet.ServletContext接口，Servlet规范  Tomcat服务器对ServletContext接口的实现类的完整类名：org.apache.catalina.core.ApplicationContextFacade javaweb程序员还是只需要面">
+<meta property="og:description" content="个人博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-08-14T08:33:42.000Z">
-<meta property="article:modified_time" content="2020-08-14T12:02:42.899Z">
 <meta property="article:author" content="Srammy">
-<meta property="article:tag" content="Servlet">
+<meta property="article:tag" content="学习记录">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Srammy&#39;s Blog" type="application/atom+xml">
@@ -138,251 +136,178 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ServletContext接口" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      ServletContext接口
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2020/08/14/%E9%81%8D%E5%8E%86Map%E7%9A%84%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-08-14T13:41:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/08/14/%E9%81%8D%E5%8E%86Map%E7%9A%84%E6%96%B9%E6%B3%95/">遍历Map的方法</a>
     </h1>
   
 
-        
-        
-	<!-- 不蒜子统计 -->
-	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-	</span>
-
-<a href="/2020/08/14/ServletContext%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2020-08-14T08:33:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=26">https://www.bilibili.com/video/BV1vb41187jH?p=26</a></p>
-<ol>
-<li><p>javax.servlet.ServletContext接口，Servlet规范</p>
-</li>
-<li><p>Tomcat服务器对ServletContext接口的实现类的完整类名：<code>org.apache.catalina.core.ApplicationContextFacade</code></p>
-<p>javaweb程序员还是只需要面向ServletContext接口调用方法即可，不需要关心具体的实现类。</p>
-<a id="more"></a>
-</li>
-<li><p>ServletContext到底是什么？什么时候被创建？什么时候被销毁？创建几个？</p>
-<ul>
-<li>ServletContext被翻译为：Servlet上下文</li>
-<li>一个webapp只有一个web.xml文件，web.xml文件服务器启动时被解析</li>
-<li>一个webapp只有一个ServletContext对象，ServletContext在服务器启动阶段被实例化</li>
-<li>ServletContext在服务器关闭时会被销毁</li>
-<li>ServletContext对应的是web.xml文件，是web.xml文件的代表</li>
-<li>ServletContext是所有Servlet对象四周环境的代表【在同一个webapp中，所有的Servlet对象共享一个”四周环境“，即ServletContext】</li>
-<li>所有的用户若想共享同一个数据，可以将这个数据放到ServletContext对象中。</li>
-<li>一般放到ServletContext对象中的数据是不建议涉及到修改操作的，因为ServletContext是多线程共享的一个对象，修改的时候存在线程安全问题。</li>
-</ul>
-</li>
-<li><p>ServletContext接口中有哪些常用的方法</p>
-<ul>
-<li><p><code>void setAttribute(String name, Object object)</code>：向ServletContext范围中添加数据（map.put(k, v)）</p>
-</li>
-<li><p><code>Object getAttribute(String name)</code>：向ServletContext范围中获取数据map.get(k)</p>
-</li>
-<li><p><code>void removeAttribute(String name)</code>：向ServletContext范围中删除数据map.remove(k)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// AServlet.java文件------&gt;向ServletContext范围中添加数据</span></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest request, ServletResponse response)</span> </span>&#123;</span><br><span class="line">        ServletConfig config = getServletConfig();</span><br><span class="line">     ServletContext application = config.getServletContext();</span><br><span class="line">     </span><br><span class="line">     <span class="comment">// 创建User对象</span></span><br><span class="line">     User user = <span class="keyword">new</span> User();</span><br><span class="line">     user.setUsercode(<span class="string">&quot;1234&quot;</span>);</span><br><span class="line">     user.setUsername(<span class="string">&quot;haha&quot;</span>);</span><br><span class="line">     </span><br><span class="line">  <span class="comment">// 向ServletContext范围中存储user</span></span><br><span class="line">     application.setAttributes(<span class="string">&quot;userObj&quot;</span>, user);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-</li>
-</ol>
-<pre><code> class user &#123;
-     private String usercode;
-     private String username;
-
-     //setter&amp;getter&amp;&amp;toString......
- &#125;
-
- // BServlet.java文件------&gt;从ServletContext范围中获取数据
- @Override
- public void service(ServletRequest request, ServletResponse response) &#123;
-        ServletConfig config = getServletConfig();
-     ServletContext application = config.getServletContext();
-
-     // 从ServletContext范围中获取数据
-     Object obj = application.getAttributes(&quot;userObj&quot;);
-     System.out.println(obj);
- &#125;
- &lt;!--hexoPostRenderEscape:&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   - &amp;#96;String getInitParameter(String name)&amp;#96;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- &amp;#96;Enumeration getInitParameterNames()&amp;#96;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#96;&amp;#96;&amp;#96;java&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#x2F;&amp;#x2F; .java文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  @Override&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     public void service(ServletRequest request, ServletResponse response) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#x2F;&amp;#x2F; 输出到浏览器页面上&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         response.setContentType(&amp;quot;text&amp;#x2F;html;charset &amp;#x3D; UTF-8&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         PrintWriter out &amp;#x3D; response.getWriter();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            ServletConfig config &amp;#x3D; getServletConfig();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         ServletContext application &amp;#x3D; config.getServletContext();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &amp;#x2F;&amp;#x2F; 获取所有初始化参数的name&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            Enumeration&amp;lt;String&amp;gt; names &amp;#x3D; application.getInitParameterNames();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         while(names.hasMoreElements()) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             String name &amp;#x3D; names.nextElement();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             String value &amp;#x3D; application.getInitParameter(name);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          out.print(name + &amp;quot;&amp;#x3D;&amp;quot; + value);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             out.print(&amp;quot;&amp;lt;br&amp;gt;&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;:hexoPostRenderEscape--&gt;</code></pre>
-<ul>
-<li><p><code>String getRealPath(String path)</code> : 获取文件绝对路径【IO流需要路径】</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .java文件</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest request, ServletResponse response)</span> </span>&#123;</span><br><span class="line">       ServletConfig config = getServletConfig();</span><br><span class="line">    ServletContext application = config.getServletContext();</span><br><span class="line">    </span><br><span class="line"> <span class="comment">// 获取文件绝对路径</span></span><br><span class="line">    String realPath = application.getRealPath(<span class="string">&quot;index.html&quot;</span>);</span><br><span class="line"> System.out.println(realPath);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-</li>
-</ul>
-<p>   web.xml文件</p>
-   <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>username<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>password<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>123<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ol start="5">
-<li><p>Servlet、ServletConfig、ServletContext之间的关系</p>
-<ul>
-<li>一个Servlet对应一个ServletConfig；100个Servlet对应100个ServletConfig</li>
-<li>所有的一个Servlet共享一个ServletContext对象</li>
-</ul>
-</li>
-<li><p>ServletContext范围可以跨用户传递数据</p>
-<p>路径总结：</p>
-</li>
-</ol>
-<ul>
-<li><p>超链接（有项目名）</p>
-<p><code>&lt;a href = &quot;/webappname/doSome&quot;&gt;&lt;/a&gt;&gt;</code></p>
-</li>
-<li><p>web.xml中的url-pattern（无项目名）</p>
-<p><code>&lt;url-pattern&gt;/doSome&lt;/url-pattern&gt;</code></p>
-</li>
-<li><p>form表单的action属性</p>
-<p><code>&lt;form action = &quot;/webappname/doSome&quot;&gt;&lt;/form&gt;</code></p>
-</li>
-<li><p>String realPath = application.getRealPath(“/WEB_INF/resource/db.xml”);</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JAVA基础</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/14/ServletContext%E6%8E%A5%E5%8F%A3/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/2020/08/14/%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          欢迎界面配置
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/08/14/ServletConfig%E6%8E%A5%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ServletConfig接口</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2020/08/14/String%E8%BD%AC%E4%B8%BAint/" class="archive-article-date">
+  	<time datetime="2020-08-14T13:35:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
+</a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
+    	 
   
-  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/08/14/String%E8%BD%AC%E4%B8%BAint/">String转为int</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JAVA基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2020/08/14/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="archive-article-date">
+  	<time datetime="2020-08-14T13:30:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/08/14/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">基本数据类型转换</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JAVA基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2020/08/14/%E4%B8%80%E7%BB%B4%E3%80%81%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/" class="archive-article-date">
+  	<time datetime="2020-08-14T12:13:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/08/14/%E4%B8%80%E7%BB%B4%E3%80%81%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/">一维、二维数组</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JAVA基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
   
+  
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -416,9 +341,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
