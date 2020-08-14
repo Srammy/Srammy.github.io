@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Srammy&#39;s Blog</title>
+  <title>Servlet生命周期 | Srammy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Srammy&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="原视频地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vb41187jH?p&#x3D;22 1. 什么是生命周期生命周期表示一个JAVA对象从最初被创建到最终被消除，经历的所有过程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Servlet生命周期">
+<meta property="og:url" content="http://yoursite.com/2020/08/14/Servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/index.html">
 <meta property="og:site_name" content="Srammy&#39;s Blog">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="原视频地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vb41187jH?p&#x3D;22 1. 什么是生命周期生命周期表示一个JAVA对象从最初被创建到最终被消除，经历的所有过程">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-14T03:26:08.000Z">
+<meta property="article:modified_time" content="2020-08-14T12:03:05.566Z">
 <meta property="article:author" content="Srammy">
-<meta property="article:tag" content="学习记录">
+<meta property="article:tag" content="Servlet">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Srammy&#39;s Blog" type="application/atom+xml">
@@ -136,590 +138,24 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-git-commit-amend修改提交信息" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Servlet生命周期" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/14/git-commit-amend%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF/">git_commit_--amend修改提交信息</a>
+    <h1 class="article-title" itemprop="name">
+      Servlet生命周期
     </h1>
   
 
         
         
-<a href="/2020/08/14/git-commit-amend%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF/" class="archive-article-date">
-  	<time datetime="2020-08-14T11:46:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>场景：add之后进行提交，但提交之后发现提交信息有误，想修改</p>
-        
-          <a class="article-more-a" href="/2020/08/14/git-commit-amend%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF/#more">more >></a>
-        
-      
+	<!-- 不蒜子统计 -->
+	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+	</span>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/14/git-commit-amend%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GenericServlet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/14/GenericServlet/">GenericServlet</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/14/GenericServlet/" class="archive-article-date">
-  	<time datetime="2020-08-14T11:26:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=31">https://www.bilibili.com/video/BV1vb41187jH?p=31</a></p>
-<ol>
-<li><p>目前所编写的Servlet类直接实现了javax.servlet.Servlet接口，但是这个接口中有很多方法目前是不需要的，可能只需要编写service方法。直接实现Servlet接口代码丑陋，有必要在中间添加一个适配器，以后所有的Servlet类不再实现Servlet接口，而是去继承适配器类。</p>
-        
-          <a class="article-more-a" href="/2020/08/14/GenericServlet/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/14/GenericServlet/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-http状态码404500" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/14/http%E7%8A%B6%E6%80%81%E7%A0%81404500/">http状态码404500</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/14/http%E7%8A%B6%E6%80%81%E7%A0%81404500/" class="archive-article-date">
-  	<time datetime="2020-08-14T11:08:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>在webapp中常见的错误代码：</li>
-</ol>
-<ul>
-<li>404   -Not Found 【资源未找到：请求的资源路径写错了】</li>
-<li>500   -Sever Inner Error【服务器内部错误，这种情况一般都是java程序出现异常】</li>
-</ul>
-        
-          <a class="article-more-a" href="/2020/08/14/http%E7%8A%B6%E6%80%81%E7%A0%81404500/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/14/http%E7%8A%B6%E6%80%81%E7%A0%81404500/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-欢迎界面配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/14/%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2%E9%85%8D%E7%BD%AE/">欢迎界面配置</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/14/%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-08-14T10:45:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=27">https://www.bilibili.com/video/BV1vb41187jH?p=27</a></p>
-<ol>
-<li><p>欢迎界面怎么设置</p>
-<ul>
-<li><p>假设在WebRoot目录下创建login.html，想让login.html作为整个webapp的欢迎界面，应该在web.xml中进行设置</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>login.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/08/14/%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2%E9%85%8D%E7%BD%AE/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/14/%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2%E9%85%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ServletContext接口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/14/ServletContext%E6%8E%A5%E5%8F%A3/">ServletContext接口</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/14/ServletContext%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2020-08-14T08:33:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=26">https://www.bilibili.com/video/BV1vb41187jH?p=26</a></p>
-<ol>
-<li><p>javax.servlet.ServletContext接口，Servlet规范</p>
-</li>
-<li><p>Tomcat服务器对ServletContext接口的实现类的完整类名：<code>org.apache.catalina.core.ApplicationContextFacade</code></p>
-<p>javaweb程序员还是只需要面向ServletContext接口调用方法即可，不需要关心具体的实现类。</p>
-        
-          <a class="article-more-a" href="/2020/08/14/ServletContext%E6%8E%A5%E5%8F%A3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/14/ServletContext%E6%8E%A5%E5%8F%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ServletConfig接口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/14/ServletConfig%E6%8E%A5%E5%8F%A3/">ServletConfig接口</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/14/ServletConfig%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2020-08-14T07:19:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=23">https://www.bilibili.com/video/BV1vb41187jH?p=23</a></p>
-<ol>
-<li><p>javax.servlet.ServletConfig`是接口</p>
-</li>
-<li><p><code>Apache Tomcat</code>服务器实现了Servlet规范，Tomcat服务器专门写了一个<code>ServletConfig</code>接口的实现类，实现类的完整类名是<code>org.apache.catalina.core.StandardWrapperFacade</code>【了解】</p>
-        
-          <a class="article-more-a" href="/2020/08/14/ServletConfig%E6%8E%A5%E5%8F%A3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/14/ServletConfig%E6%8E%A5%E5%8F%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-UML介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/14/UML%E4%BB%8B%E7%BB%8D/">UML介绍</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/14/UML%E4%BB%8B%E7%BB%8D/" class="archive-article-date">
-  	<time datetime="2020-08-14T04:22:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=21">https://www.bilibili.com/video/BV1vb41187jH?p=21</a></p>
-<h1 id="1-什么是UML"><a href="#1-什么是UML" class="headerlink" title="1. 什么是UML"></a>1. 什么是UML</h1><ul>
-<li><p>统一建模语言，1997年OMG组织制定的图标式语言，在系统设计阶段由系统分析师使用的语言，使用这些图表语言体现设计思想</p>
-</li>
-<li><p>后期程序员开发的依据就是这些设计图</p>
-</li>
-<li><p>UML和任何一种编程语言无关，是一个独立的学科</p>
-</li>
-<li><p>UML属于软件工程学</p>
-        
-          <a class="article-more-a" href="/2020/08/14/UML%E4%BB%8B%E7%BB%8D/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">UML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/14/UML%E4%BB%8B%E7%BB%8D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Servlet生命周期" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/14/Servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Servlet生命周期</a>
-    </h1>
-  
-
-        
-        
 <a href="/2020/08/14/Servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="archive-article-date">
   	<time datetime="2020-08-14T03:26:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
 </a>
@@ -730,9 +166,82 @@
       
         <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=22">https://www.bilibili.com/video/BV1vb41187jH?p=22</a></p>
 <h1 id="1-什么是生命周期"><a href="#1-什么是生命周期" class="headerlink" title="1. 什么是生命周期"></a>1. 什么是生命周期</h1><p>生命周期表示一个JAVA对象从最初被创建到最终被消除，经历的所有过程</p>
-        
-          <a class="article-more-a" href="/2020/08/14/Servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/#more">more >></a>
-        
+<a id="more"></a>
+
+<h1 id="2-Servlet对象的生命周期是谁来管理的？程序员可以干涉吗？"><a href="#2-Servlet对象的生命周期是谁来管理的？程序员可以干涉吗？" class="headerlink" title="2. Servlet对象的生命周期是谁来管理的？程序员可以干涉吗？"></a>2. Servlet对象的生命周期是谁来管理的？程序员可以干涉吗？</h1><ul>
+<li>Servlet对象的生命周期，javaweb程序员是无权干涉的，包括该Servlet对象的相关方法的调用，javaweb程序员也是无权干涉的。</li>
+<li>Servlet对象从最初的创建，方法的调用，以及对象的销毁，整个过程是由WEB容器来管理的。</li>
+<li>WEB Container管理Servlet对象的生命周期。</li>
+</ul>
+<h1 id="3-Servlet对象的实例化"><a href="#3-Servlet对象的实例化" class="headerlink" title="3. Servlet对象的实例化"></a>3. Servlet对象的实例化</h1><p><em>默认情况下</em>，Servlet对象在WEB服务器启动阶段不会被实例化。【若希望在WEB服务器启动阶段实例化Servlet对象，需要在web.xml中进行配置】</p>
+<h1 id="4-描述Servlet对象的生命周期"><a href="#4-描述Servlet对象的生命周期" class="headerlink" title="4. 描述Servlet对象的生命周期"></a>4. 描述Servlet对象的生命周期</h1><ul>
+<li><p>用户在浏览器地址栏上输入URL：<a target="_blank" rel="noopener" href="http://localhost:8080/projectname/resource">http://localhost:8080/projectname/resource</a></p>
+</li>
+<li><p>web容器截取请求路径：/projectname/resource</p>
+</li>
+<li><p>web容器在容器上下文中找请求路径/projectname/resource</p>
+</li>
+<li><p>若没有找到对应的Servlet对象</p>
+<p>  【1】通过web.xml文件中相关的配置信息，得到请求路径/resource对应的Servlet完整类名<br>  【2】通过反射机制，调用Servlet类的无参构造方法完成Servlet对象的实例化<br>  【3】web容器调用Servlet对象的init方法完成初始化操作<br>  【4】web容器调用Servlet对象的service方法提供服务</p>
+</li>
+<li><p>若找到对应的Servlet对象</p>
+<p>  【1】web容器调用Servlet对象的service方法提供服务</p>
+</li>
+<li><p>web容器关闭的时候/webapp重新部署的时候/该Servlet对象长时间没有用户访问的时候，web容器会将该Servlet对象销毁，在销毁该对象<strong>之前</strong>，web容器会调用Servlet对象的destroy方法，完成销毁之前的准备。</p>
+</li>
+</ul>
+<h1 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. 总结</h1><ul>
+<li>Servlet类的构造方法只执行一次</li>
+<li>Servlet对象的init方法只执行一次</li>
+<li>Servlet对象的service方法，只要用户请求一次，就执行一次</li>
+<li>Servlet对象的destroy方法，只执行一次</li>
+</ul>
+<h1 id="6-注意"><a href="#6-注意" class="headerlink" title="6. 注意"></a>6. 注意</h1><ul>
+<li>init方法执行的时候，Servlet对象已经创建好了</li>
+<li>destroy方法执行的时候，Servlet对象还没有被销毁，即将被销毁</li>
+</ul>
+<h1 id="7-Servlet对象（伪）单例多线程"><a href="#7-Servlet对象（伪）单例多线程" class="headerlink" title="7. Servlet对象（伪）单例多线程"></a>7. Servlet对象（伪）单例多线程</h1><p>Servlet对象是单例的但是不符合单例模式，只能称为伪单例。真单例的构造方法是私有的。Tomcat服务器是支持多线程的，所以Servlet对象在单实例多线程的环境下运行。那么Servlet对象中若有实例变量，并且实例变量涉及到修改操作，那么这个Servlet对象一定会存在线程安全问题，不建议在Servlet对象中使用实例变量，尽量使用局部变量。</p>
+<h1 id="8-服务器启动时实例化Servlet对象"><a href="#8-服务器启动时实例化Servlet对象" class="headerlink" title="8.服务器启动时实例化Servlet对象"></a>8.服务器启动时实例化Servlet对象</h1><p>在web.xml文件中进行配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>resource<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--Servlet全类名--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>包名.resourceServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--启动时实例化--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>resource<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--请求路径--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/resource<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>resource1<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--Servlet全类名--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>包名.resourceServlet1<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--启动时实例化--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>0<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>resourc1<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--请求路径--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/resource1<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：<code>&lt;load-on-startup&gt;0&lt;/load-on-startup&gt;</code><strong>自然数</strong>越小优先级越高，越先被实例化</p>
+<h1 id="9-Servlet对象实例化之后，这个Servlet对象被存储到哪里了？"><a href="#9-Servlet对象实例化之后，这个Servlet对象被存储到哪里了？" class="headerlink" title="9.  Servlet对象实例化之后，这个Servlet对象被存储到哪里了？"></a>9.  Servlet对象实例化之后，这个Servlet对象被存储到哪里了？</h1><p>大多数的WEB容器都是将该Servlet对象以及对应的url-pattern存储到Map集合中了。</p>
+<p> 在WEB容器中有这样一个Map集合</p>
+<p>Map&lt;String, Servlet&gt;</p>
+<p>key                  value</p>
+<hr>
+<p>/login           loginServlet对象引用</p>
+<p>/delete         deleteServlet对象引用</p>
+<p>/save            saveServlet对象引用</p>
+<h1 id="10-服务器在启动时就会解析各个webapp的web-xml文件"><a href="#10-服务器在启动时就会解析各个webapp的web-xml文件" class="headerlink" title="10. 服务器在启动时就会解析各个webapp的web.xml文件"></a>10. 服务器在启动时就会解析各个webapp的web.xml文件</h1><p>将web.xml文件中的url-pattern和对应的Servlet完整类名存储到Map集合中了</p>
+<p>在WEB容器中有这样一个Map集合</p>
+<p>Map&lt;String, String&gt;</p>
+<p>key                  value</p>
+<hr>
+<p>/login           包名.loginServlet</p>
+<p>/delete         包名.deleteServlet</p>
+<p>……</p>
+<h1 id="11-Servlet接口中的方法编写什么代码？什么时候使用这些方法？"><a href="#11-Servlet接口中的方法编写什么代码？什么时候使用这些方法？" class="headerlink" title="11.Servlet接口中的方法编写什么代码？什么时候使用这些方法？"></a>11.Servlet接口中的方法编写什么代码？什么时候使用这些方法？</h1><ul>
+<li>无参数构造方法【以后就不需要再考虑构造函数了，尽量别动构造函数】</li>
+<li>init方法</li>
+</ul>
+<p>以上两个方法执行时间几乎是相同的，执行次数都是一次，构造方法执行的时候对象正在创建，init方法执行的时候，对象已经创建；若系统要求在对象创建时刻执行一段特殊的代码，这段代码尽量写到init方法中。</p>
+<p>为什么不建议将代码写到构造函数中：</p>
+<ol>
+<li>存在风险。当程序员编写构造方法的时候，可能会导致无参数构造方法不存在</li>
+</ol>
+<p>Servlet中的init方法是SUN公司为javaweb程序员专门提供的一个初始化时刻，若希望在初始化时刻执行一段特殊的代码，这段代码可以写到init中，将来会被自动调用。</p>
+<ul>
+<li>service方法</li>
+</ul>
+<p>这个方法是必须要重写的。因为在这个方法需要完成<strong>业务逻辑的处理，请求的处理，以及完成响应</strong>。</p>
+<ul>
+<li><p>destroy方法</p>
+<p>这个方法也是sun公司为javaweb程序员提供的一个特殊的时候，这个特殊的时刻被称为对象销毁时刻。若希望在销毁时刻执行一段特殊的代码，需要将这段代码写到destroy方法，自动被容器调用。</p>
+</li>
+</ul>
+<p>回顾：类加载时刻执行程序，代码写到静态代码块中。</p>
+
       
 
       
@@ -754,16 +263,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/14/Servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/14/Servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/08/14/UML%E4%BB%8B%E7%BB%8D/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          UML介绍
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/08/13/git-diff%E7%94%A8%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git diff用法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -783,87 +360,14 @@
 
 
 
-
   
-    <article id="post-git-diff用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/13/git-diff%E7%94%A8%E6%B3%95/">git diff用法</a>
-    </h1>
   
 
-        
-        
-<a href="/2020/08/13/git-diff%E7%94%A8%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-08-13T12:58:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="git-diff的使用"><a href="#git-diff的使用" class="headerlink" title="git diff的使用"></a>git diff的使用</h1><h2 id="1-不add修改"><a href="#1-不add修改" class="headerlink" title="1 不add修改"></a>1 不add修改</h2><p>提交后修改了工作区，但是没有add到暂存区</p>
-<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/%E6%8F%90%E4%BA%A4%E5%90%8E%E4%BF%AE%E6%94%B9%E5%B7%A5%E4%BD%9C%E5%8C%BA.jpg"></p>
-<h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3><p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/git-diff.jpg"></p>
-        
-          <a class="article-more-a" href="/2020/08/13/git-diff%E7%94%A8%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/13/git-diff%E7%94%A8%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -897,8 +401,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
