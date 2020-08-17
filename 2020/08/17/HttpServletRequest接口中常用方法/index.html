@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ServletContext接口 | Srammy&#39;s Blog</title>
+  <title>HttpServletRequest接口中常用方法 | Srammy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原视频地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vb41187jH?p&#x3D;26  javax.servlet.ServletContext接口，Servlet规范  Tomcat服务器对ServletContext接口的实现类的完整类名：org.apache.catalina.core.ApplicationContextFacade javaweb程序员还是只需要面">
+  <meta name="description" content="原视频地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vb41187jH?p&#x3D;40 ServletContext是Servlet上下文对象，该接口中也有这样几个方法：  void setAttribute(String name, Object o) :向ServletContext范围中添加数据  Object getAttribute(String name)：向Se">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ServletContext接口">
-<meta property="og:url" content="http://yoursite.com/2020/08/14/ServletContext%E6%8E%A5%E5%8F%A3/index.html">
+<meta property="og:title" content="HttpServletRequest接口中常用方法">
+<meta property="og:url" content="http://yoursite.com/2020/08/17/HttpServletRequest%E6%8E%A5%E5%8F%A3%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="Srammy&#39;s Blog">
-<meta property="og:description" content="原视频地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vb41187jH?p&#x3D;26  javax.servlet.ServletContext接口，Servlet规范  Tomcat服务器对ServletContext接口的实现类的完整类名：org.apache.catalina.core.ApplicationContextFacade javaweb程序员还是只需要面">
+<meta property="og:description" content="原视频地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vb41187jH?p&#x3D;40 ServletContext是Servlet上下文对象，该接口中也有这样几个方法：  void setAttribute(String name, Object o) :向ServletContext范围中添加数据  Object getAttribute(String name)：向Se">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-08-14T08:33:42.000Z">
-<meta property="article:modified_time" content="2020-08-14T12:02:42.899Z">
+<meta property="article:published_time" content="2020-08-17T09:43:16.000Z">
+<meta property="article:modified_time" content="2020-08-17T14:26:13.788Z">
 <meta property="article:author" content="Srammy">
 <meta property="article:tag" content="Servlet">
 <meta name="twitter:card" content="summary">
@@ -138,14 +138,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ServletContext接口" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-HttpServletRequest接口中常用方法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ServletContext接口
+      HttpServletRequest接口中常用方法
     </h1>
   
 
@@ -156,104 +156,105 @@
 		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
 	</span>
 
-<a href="/2020/08/14/ServletContext%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2020-08-14T08:33:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
+<a href="/2020/08/17/HttpServletRequest%E6%8E%A5%E5%8F%A3%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-08-17T09:43:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=26">https://www.bilibili.com/video/BV1vb41187jH?p=26</a></p>
-<ol>
-<li><p>javax.servlet.ServletContext接口，Servlet规范</p>
+        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=40">https://www.bilibili.com/video/BV1vb41187jH?p=40</a></p>
+<p>ServletContext是Servlet上下文对象，该接口中也有这样几个方法：</p>
+<ul>
+<li><p><code>void setAttribute(String name, Object o)</code> :向ServletContext范围中添加数据</p>
 </li>
-<li><p>Tomcat服务器对ServletContext接口的实现类的完整类名：<code>org.apache.catalina.core.ApplicationContextFacade</code></p>
-<p>javaweb程序员还是只需要面向ServletContext接口调用方法即可，不需要关心具体的实现类。</p>
+<li><p><code>Object getAttribute(String name)</code>：向ServletContext范围中获取数据</p>
 <a id="more"></a>
 </li>
-<li><p>ServletContext到底是什么？什么时候被创建？什么时候被销毁？创建几个？</p>
-<ul>
-<li>ServletContext被翻译为：Servlet上下文</li>
-<li>一个webapp只有一个web.xml文件，web.xml文件服务器启动时被解析</li>
-<li>一个webapp只有一个ServletContext对象，ServletContext在服务器启动阶段被实例化</li>
-<li>ServletContext在服务器关闭时会被销毁</li>
-<li>ServletContext对应的是web.xml文件，是web.xml文件的代表</li>
-<li>ServletContext是所有Servlet对象四周环境的代表【在同一个webapp中，所有的Servlet对象共享一个”四周环境“，即ServletContext】</li>
-<li>所有的用户若想共享同一个数据，可以将这个数据放到ServletContext对象中。</li>
-<li>一般放到ServletContext对象中的数据是不建议涉及到修改操作的，因为ServletContext是多线程共享的一个对象，修改的时候存在线程安全问题。</li>
-</ul>
-</li>
-<li><p>ServletContext接口中有哪些常用的方法</p>
-<ul>
-<li><p><code>void setAttribute(String name, Object object)</code>：向ServletContext范围中添加数据（map.put(k, v)）</p>
-</li>
-<li><p><code>Object getAttribute(String name)</code>：向ServletContext范围中获取数据map.get(k)</p>
-</li>
-<li><p><code>void removeAttribute(String name)</code>：向ServletContext范围中删除数据map.remove(k)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// AServlet.java文件------&gt;向ServletContext范围中添加数据</span></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest request, ServletResponse response)</span> </span>&#123;</span><br><span class="line">        ServletConfig config = getServletConfig();</span><br><span class="line">     ServletContext application = config.getServletContext();</span><br><span class="line">     </span><br><span class="line">     <span class="comment">// 创建User对象</span></span><br><span class="line">     User user = <span class="keyword">new</span> User();</span><br><span class="line">     user.setUsercode(<span class="string">&quot;1234&quot;</span>);</span><br><span class="line">     user.setUsername(<span class="string">&quot;haha&quot;</span>);</span><br><span class="line">     </span><br><span class="line">  <span class="comment">// 向ServletContext范围中存储user</span></span><br><span class="line">     application.setAttributes(<span class="string">&quot;userObj&quot;</span>, user);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
-
-
+<li><p><code>void removeAttribute(String name)</code>：删除ServletContext范围中的数据</p>
 </li>
 </ul>
-</li>
+<p>ServletContext是一个怎样的范围？</p>
+<ul>
+<li>所有用户共享的一个范围对象，我们一般把ServletContext变量命名为：application。这个对象代表一个应用。一个webapp只有一个这样的对象。范围极大。</li>
+</ul>
+<ol>
+<li></li>
 </ol>
-<pre><code> class user &#123;
-     private String usercode;
-     private String username;
-
-     //setter&amp;getter&amp;&amp;toString......
- &#125;
-
- // BServlet.java文件------&gt;从ServletContext范围中获取数据
- @Override
- public void service(ServletRequest request, ServletResponse response) &#123;
-        ServletConfig config = getServletConfig();
-     ServletContext application = config.getServletContext();
-
-     // 从ServletContext范围中获取数据
-     Object obj = application.getAttributes(&quot;userObj&quot;);
-     System.out.println(obj);
- &#125;
- &lt;!--hexoPostRenderEscape:&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   - &amp;#96;String getInitParameter(String name)&amp;#96;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- &amp;#96;Enumeration getInitParameterNames()&amp;#96;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#96;&amp;#96;&amp;#96;java&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#x2F;&amp;#x2F; .java文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  @Override&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     public void service(ServletRequest request, ServletResponse response) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#x2F;&amp;#x2F; 输出到浏览器页面上&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         response.setContentType(&amp;quot;text&amp;#x2F;html;charset &amp;#x3D; UTF-8&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         PrintWriter out &amp;#x3D; response.getWriter();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            ServletConfig config &amp;#x3D; getServletConfig();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         ServletContext application &amp;#x3D; config.getServletContext();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &amp;#x2F;&amp;#x2F; 获取所有初始化参数的name&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            Enumeration&amp;lt;String&amp;gt; names &amp;#x3D; application.getInitParameterNames();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         while(names.hasMoreElements()) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             String name &amp;#x3D; names.nextElement();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             String value &amp;#x3D; application.getInitParameter(name);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          out.print(name + &amp;quot;&amp;#x3D;&amp;quot; + value);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             out.print(&amp;quot;&amp;lt;br&amp;gt;&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;:hexoPostRenderEscape--&gt;</code></pre>
 <ul>
-<li><p><code>String getRealPath(String path)</code> : 获取文件绝对路径【IO流需要路径】</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .java文件</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest request, ServletResponse response)</span> </span>&#123;</span><br><span class="line">       ServletConfig config = getServletConfig();</span><br><span class="line">    ServletContext application = config.getServletContext();</span><br><span class="line">    </span><br><span class="line"> <span class="comment">// 获取文件绝对路径</span></span><br><span class="line">    String realPath = application.getRealPath(<span class="string">&quot;index.html&quot;</span>);</span><br><span class="line"> System.out.println(realPath);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><code>String getParameter(String name)</code>：通过key获取value这个一维数组中的首元素。通常情况下，这个一维数组中只有一个元素，所以这个方法使用最多。**</li>
+<li><code>String[] getParameterValues(String name)</code>：通过Map集合key获取value这个一维数组**(也比较常用)**，这个方法适合取复选框checkbox中的数据</li>
+<li><code>Map getParameterMap()</code>: 获取整个Map集合</li>
+<li><code>Enumeration getParameterNames()</code>：获取整个Map集合的所有key</li>
+</ul>
+<ol start="2">
+<li></li>
+</ol>
+<ul>
+<li><code>String getRemoteAddr()</code>：获取客户端IP地址</li>
+<li><code>String getContextPath()</code>: 获取上下文路径【webapp的根路径】</li>
+<li><code>String getMethod()</code>：获取浏览器的请求方式</li>
+<li><code>String getRequestURI()</code>：获取请求的URI</li>
+<li><code>StringBuffer getRequestURL()：获取请求的URL</code></li>
+<li><code>String getServletPath()</code>：获取Servlet Path（web.xml中的url-pattern）</li>
+</ul>
+<ol start="3">
+<li></li>
+</ol>
+<ul>
+<li><code>void setAttribute(String name, Object o)</code> :向request范围中添加数据</li>
+<li><code>Object getAttribute(String name)</code>：向request范围中获取数据</li>
+<li><code>void removeAttribute(String name)</code>：删除request范围中的数据</li>
+</ul>
+<p>HttpServletRequest是一个怎样的范围呐？</p>
+<ul>
+<li><p>HttpServletRequest类型的变量通常命名为：request，代表当前的本次请求。一次请求对应一个request对象，100个请求对应100个请求对象。请求范围是极小的，request只能完成在同一次请求中传递数据。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// AServlet.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 创建User对象</span></span><br><span class="line">        User user = <span class="keyword">new</span> User();</span><br><span class="line">        user.setUsercode(<span class="string">&quot;111&quot;</span>);</span><br><span class="line">        user.setUsername(<span class="string">&quot;zhangsan&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 将User对象存储到request范围中</span></span><br><span class="line">        request.setAttribute(<span class="string">&quot;userObj&quot;</span>, user);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//从request范围中取出数据</span></span><br><span class="line">        <span class="comment">//Object obj = request.getAttribute(&quot;userObj&quot;);</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 要想在BServlet中获取到AServlet中添加的userObj，要使用--&gt;转发</span></span><br><span class="line">        <span class="comment">// 执行完AServlet之后，跳转到BServlet执行，将AServlet执行和BServlet执行放到一个请求中</span></span><br><span class="line">        <span class="comment">// 必须使用转发技术</span></span><br><span class="line">        <span class="comment">// forward[转发],转发是一次请求</span></span><br><span class="line">        <span class="comment">// 1.获取请求转发器对象【以下转发器指向了BServlet】</span></span><br><span class="line">        <span class="comment">// RequestDispatcher dispatcher = request.getRequestDispatcher(&quot;/b&quot;);</span></span><br><span class="line">        <span class="comment">// 2.调用请求转发器的forward方法即可完成转发</span></span><br><span class="line">        <span class="comment">// dispatcher.forward(request, response);</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 转发(其实就是将上面的进行合并)</span></span><br><span class="line">        request.getRequestDispatcher(<span class="string">&quot;/b&quot;</span>).forward(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-
-
-
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// BServlet.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 从request范围中取出数据</span></span><br><span class="line">        Object obj = request.getAttribute(<span class="string">&quot;userObj&quot;</span>);</span><br><span class="line">        <span class="comment">// 注意：此时得不到AServlet在request中存入的&quot;userObj&quot;,因为这是两次不同的请求。要想在BServlet中获取到AServlet中添加的userObj，要使用--&gt;转发</span></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>   web.xml文件</p>
-   <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>username<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>password<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>123<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
+<ol start="4">
+<li></li>
+</ol>
+<ul>
+<li><p><code>RequestDispatcher getRequestDispatcher(String path)</code>: 获取请求转发器，让转发器对象指向某个资源</p>
+<ul>
+<li><p>转发是一次请求</p>
+</li>
+<li><p>转发的代码：<code>request.getRequestDispatcher(&quot;/b&quot;).forward(request, response);</code></p>
+</li>
+</ul>
+</li>
+</ul>
 <ol start="5">
-<li><p>Servlet、ServletConfig、ServletContext之间的关系</p>
-<ul>
-<li>一个Servlet对应一个ServletConfig；100个Servlet对应100个ServletConfig</li>
-<li>所有的一个Servlet共享一个ServletContext对象</li>
-</ul>
-</li>
-<li><p>ServletContext范围可以跨用户传递数据</p>
-<p>路径总结：</p>
-</li>
+<li></li>
 </ol>
 <ul>
-<li><p>超链接（有项目名）</p>
-<p><code>&lt;a href = &quot;/webappname/doSome&quot;&gt;&lt;/a&gt;&gt;</code></p>
-</li>
-<li><p>web.xml中的url-pattern（无项目名）</p>
-<p><code>&lt;url-pattern&gt;/doSome&lt;/url-pattern&gt;</code></p>
-</li>
-<li><p>form表单的action属性</p>
-<p><code>&lt;form action = &quot;/webappname/doSome&quot;&gt;&lt;/form&gt;</code></p>
-</li>
-<li><p>String realPath = application.getRealPath(“/WEB_INF/resource/db.xml”);</p>
-</li>
+<li><code>void setCharacterEncoding(String env)</code></li>
+</ul>
+<ol start="6">
+<li></li>
+</ol>
+<ul>
+<li><code>Cookie[] getCookies()</code></li>
+<li><code>HttpSession getSession()</code> </li>
+</ul>
+<ol start="7">
+<li>关于范围对象的选择</li>
+</ol>
+<ul>
+<li>ServletContext应用范围，可以跨用户传递数据</li>
+<li>ServletRequest请求范围，只能在同一个请求中传递数据【可以跨Servlet传递数据，但是这多个Servlet必须在同一个请求中】</li>
+<li>优先选择request范围</li>
+</ul>
+<ol start="8">
+<li>注意以下两个方法的区别</li>
+</ol>
+<ul>
+<li>String value = request.getParameter(name); //表表单上获取数据</li>
+<li>Object obj = request.getAttribute(name); //从request范围中获取数据【之前一定调用过setAttribute】</li>
 </ul>
 
       
@@ -324,7 +325,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/14/ServletContext%E6%8E%A5%E5%8F%A3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/17/HttpServletRequest%E6%8E%A5%E5%8F%A3%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -338,18 +339,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/08/14/%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/08/17/%E7%A8%8B%E5%BA%8F%E4%B8%AD%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          欢迎界面配置
+          程序中乱码问题
         
       </div>
     </a>
   
   
-    <a href="/2020/08/14/ServletConfig%E6%8E%A5%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ServletConfig接口</div>
+    <a href="/2020/08/16/HttpServletRequest%E6%8E%A5%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HttpServletRequest接口</div>
       <i class="icon-circle-right"></i>
     </a>
   

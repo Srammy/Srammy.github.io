@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ServletContext接口 | Srammy&#39;s Blog</title>
+  <title>程序中乱码问题 | Srammy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原视频地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vb41187jH?p&#x3D;26  javax.servlet.ServletContext接口，Servlet规范  Tomcat服务器对ServletContext接口的实现类的完整类名：org.apache.catalina.core.ApplicationContextFacade javaweb程序员还是只需要面">
+  <meta name="description" content="原视频地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vb41187jH?p&#x3D;41  乱码经常出现在什么位置上？  数据”传递“过程中的乱码 数据“展示”过程中的乱码 数据“保存”过程中的乱码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ServletContext接口">
-<meta property="og:url" content="http://yoursite.com/2020/08/14/ServletContext%E6%8E%A5%E5%8F%A3/index.html">
+<meta property="og:title" content="程序中乱码问题">
+<meta property="og:url" content="http://yoursite.com/2020/08/17/%E7%A8%8B%E5%BA%8F%E4%B8%AD%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Srammy&#39;s Blog">
-<meta property="og:description" content="原视频地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vb41187jH?p&#x3D;26  javax.servlet.ServletContext接口，Servlet规范  Tomcat服务器对ServletContext接口的实现类的完整类名：org.apache.catalina.core.ApplicationContextFacade javaweb程序员还是只需要面">
+<meta property="og:description" content="原视频地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vb41187jH?p&#x3D;41  乱码经常出现在什么位置上？  数据”传递“过程中的乱码 数据“展示”过程中的乱码 数据“保存”过程中的乱码">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-08-14T08:33:42.000Z">
-<meta property="article:modified_time" content="2020-08-14T12:02:42.899Z">
+<meta property="article:published_time" content="2020-08-17T11:26:18.000Z">
+<meta property="article:modified_time" content="2020-08-17T15:33:57.270Z">
 <meta property="article:author" content="Srammy">
 <meta property="article:tag" content="Servlet">
 <meta name="twitter:card" content="summary">
@@ -138,14 +138,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ServletContext接口" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-程序中乱码问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ServletContext接口
+      程序中乱码问题
     </h1>
   
 
@@ -156,105 +156,92 @@
 		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
 	</span>
 
-<a href="/2020/08/14/ServletContext%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2020-08-14T08:33:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
+<a href="/2020/08/17/%E7%A8%8B%E5%BA%8F%E4%B8%AD%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-08-17T11:26:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=26">https://www.bilibili.com/video/BV1vb41187jH?p=26</a></p>
+        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=41">https://www.bilibili.com/video/BV1vb41187jH?p=41</a></p>
 <ol>
-<li><p>javax.servlet.ServletContext接口，Servlet规范</p>
-</li>
-<li><p>Tomcat服务器对ServletContext接口的实现类的完整类名：<code>org.apache.catalina.core.ApplicationContextFacade</code></p>
-<p>javaweb程序员还是只需要面向ServletContext接口调用方法即可，不需要关心具体的实现类。</p>
+<li><p>乱码经常出现在什么位置上？</p>
+<ul>
+<li>数据”传递“过程中的乱码</li>
+<li>数据“展示”过程中的乱码</li>
+<li>数据“保存”过程中的乱码</li>
+</ul>
 <a id="more"></a>
 </li>
-<li><p>ServletContext到底是什么？什么时候被创建？什么时候被销毁？创建几个？</p>
+<li><p>数据保存过程中的乱码</p>
 <ul>
-<li>ServletContext被翻译为：Servlet上下文</li>
-<li>一个webapp只有一个web.xml文件，web.xml文件服务器启动时被解析</li>
-<li>一个webapp只有一个ServletContext对象，ServletContext在服务器启动阶段被实例化</li>
-<li>ServletContext在服务器关闭时会被销毁</li>
-<li>ServletContext对应的是web.xml文件，是web.xml文件的代表</li>
-<li>ServletContext是所有Servlet对象四周环境的代表【在同一个webapp中，所有的Servlet对象共享一个”四周环境“，即ServletContext】</li>
-<li>所有的用户若想共享同一个数据，可以将这个数据放到ServletContext对象中。</li>
-<li>一般放到ServletContext对象中的数据是不建议涉及到修改操作的，因为ServletContext是多线程共享的一个对象，修改的时候存在线程安全问题。</li>
+<li>最终保存到数据库表中的时候，数据出现乱码</li>
+<li>导致数据保存过程中的乱码包括以下两种情况：<ul>
+<li>在保存之前，数据本身就是乱码，保存到数据库表中的数据一定是乱码</li>
+<li>保存之前，数据不是乱码，但是由于数据库不支持简体中文，保存之后出现乱码</li>
 </ul>
 </li>
-<li><p>ServletContext接口中有哪些常用的方法</p>
+</ul>
+</li>
+<li><p>数据展示过程中的乱码</p>
 <ul>
-<li><p><code>void setAttribute(String name, Object object)</code>：向ServletContext范围中添加数据（map.put(k, v)）</p>
+<li><p>最终展示到网页上的数据出现中文乱码</p>
 </li>
-<li><p><code>Object getAttribute(String name)</code>：向ServletContext范围中获取数据map.get(k)</p>
+<li><p>经过执行java程序之后，java程序负责向浏览器响应的时候，中文出现乱码，怎么解决：</p>
+<ul>
+<li><p>设置响应的内容类型，以及对应的字符编码方式</p>
+<p><code>response.setContentType(&quot;text/html;charset=UTF-8&quot;);</code></p>
 </li>
-<li><p><code>void removeAttribute(String name)</code>：向ServletContext范围中删除数据map.remove(k)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// AServlet.java文件------&gt;向ServletContext范围中添加数据</span></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest request, ServletResponse response)</span> </span>&#123;</span><br><span class="line">        ServletConfig config = getServletConfig();</span><br><span class="line">     ServletContext application = config.getServletContext();</span><br><span class="line">     </span><br><span class="line">     <span class="comment">// 创建User对象</span></span><br><span class="line">     User user = <span class="keyword">new</span> User();</span><br><span class="line">     user.setUsercode(<span class="string">&quot;1234&quot;</span>);</span><br><span class="line">     user.setUsername(<span class="string">&quot;haha&quot;</span>);</span><br><span class="line">     </span><br><span class="line">  <span class="comment">// 向ServletContext范围中存储user</span></span><br><span class="line">     application.setAttributes(<span class="string">&quot;userObj&quot;</span>, user);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+</ul>
+</li>
+<li><p>没有经过执行java程序，直接访问html页面，出现中文乱码，怎么解决：</p>
+<p><code>&lt;meta content = &quot;text/html;charset=UTF-8&quot;&gt;</code></p>
+<p>就是要让<strong>编写的html文件</strong>和<strong>浏览器</strong>的编解码方式相同。</p>
+</li>
+</ul>
+</li>
+<li><p>数据传递过程中的乱码</p>
+<ul>
+<li><p>将数据从浏览器发送到服务器的时候，服务器接受到的数据是乱码</p>
+</li>
+<li><p>浏览器是这样发送数据给服务器的：dname=%E5%B8%82%E5%9C%BA%E9%83%A8</p>
+</li>
+<li><p>”市场部“对应的ISO-8859-1的编码：%E5%B8%82%E5%9C%BA%E9%83%A8</p>
+</li>
+<li><p>ISO-8859-1是国际标准码，不支持中文编码，兼容ASCII，有称为latin1编码</p>
+</li>
+<li><p>不管是哪个国家的文字，在浏览器发送给服务器的时候，都会采用ISO-8859-1的编码方式发送</p>
+</li>
+<li><p>所以web服务器接收到的数据出现乱码</p>
+</li>
+<li><p>解决数据传递过程中的乱码</p>
+<ul>
+<li><p>第一种解决方案</p>
+<p>万能方式，既能解决POST请求乱码，又能解决GET请求乱码</p>
+<p>先将服务器中接受到的数据采用ISO-8859-1的方式解码，回归原始转态（一堆二进制数），再给定一种支持简体中文的编码方式重新编码组装。【组装时的编码方式需要和浏览器的编码方式相同】</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SaveDeptServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        String dname = request.getParameter(<span class="string">&quot;dname&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 第一种解决方式：万能解决方案，POST和GET都可以使用</span></span><br><span class="line">        <span class="keyword">byte</span>[] bytes = dname.getBytes(<span class="string">&quot;ISO-8859-1&quot;</span>); <span class="comment">// 解码</span></span><br><span class="line">        dname = <span class="keyword">new</span> String(bytes, <span class="string">&quot;UTF-8&quot;</span>); <span class="comment">// 编码【编码方式需要和浏览器的编码方式相同】</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第二种解决方案：【只支持POST请求，因为这种方式只对请求体编码】</p>
+<p><code>request.setCharacterEncoding(&quot;UTF-8&quot;);</code></p>
+<p>以上代码必须在从request中获取任何数据之前有效果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SaveDeptServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">// 第二种解决方式：调用request的setCharacterEncoding方法，但是这种方法只适合POST请求，只对请求体编码。告诉Tomcat服务器，请求体中的数据采用UTF-8的方式进行编码</span></span><br><span class="line">        request.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">        String dname = request.getParameter(<span class="string">&quot;dname&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第三种方案：专门解决get请求的乱码问题，因为这种方式只对请求行编码</p>
+<p>修改CATALINA_HOME/conf/server.xml文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SaveDeptServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 第三种方式</span></span><br><span class="line">        String dname = request.getParameter(<span class="string">&quot;dname&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>在server.xml文件的<code>&lt;connector&gt;</code>中添加<code>URLEncoding=&quot;UTF-8&quot;</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span> = <span class="string">&quot;8080&quot;</span> <span class="attr">protocol</span>=<span class="string">&quot;HTTp/1.1&quot;</span><span class="attr">.....</span></span></span><br><span class="line"><span class="tag"><span class="attr">URLEncoding</span>=<span class="string">&quot;UTF-8&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 
+<p><code>&lt;connector&gt;</code>标签中都可以编写哪些属性呐？</p>
+<p>可以参考CATALINA_HOME\webapps\docs\config\http.html</p>
+</li>
+</ul>
 </li>
 </ul>
 </li>
 </ol>
-<pre><code> class user &#123;
-     private String usercode;
-     private String username;
-
-     //setter&amp;getter&amp;&amp;toString......
- &#125;
-
- // BServlet.java文件------&gt;从ServletContext范围中获取数据
- @Override
- public void service(ServletRequest request, ServletResponse response) &#123;
-        ServletConfig config = getServletConfig();
-     ServletContext application = config.getServletContext();
-
-     // 从ServletContext范围中获取数据
-     Object obj = application.getAttributes(&quot;userObj&quot;);
-     System.out.println(obj);
- &#125;
- &lt;!--hexoPostRenderEscape:&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   - &amp;#96;String getInitParameter(String name)&amp;#96;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- &amp;#96;Enumeration getInitParameterNames()&amp;#96;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#96;&amp;#96;&amp;#96;java&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#x2F;&amp;#x2F; .java文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  @Override&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     public void service(ServletRequest request, ServletResponse response) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#x2F;&amp;#x2F; 输出到浏览器页面上&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         response.setContentType(&amp;quot;text&amp;#x2F;html;charset &amp;#x3D; UTF-8&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         PrintWriter out &amp;#x3D; response.getWriter();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            ServletConfig config &amp;#x3D; getServletConfig();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         ServletContext application &amp;#x3D; config.getServletContext();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &amp;#x2F;&amp;#x2F; 获取所有初始化参数的name&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            Enumeration&amp;lt;String&amp;gt; names &amp;#x3D; application.getInitParameterNames();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         while(names.hasMoreElements()) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             String name &amp;#x3D; names.nextElement();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             String value &amp;#x3D; application.getInitParameter(name);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          out.print(name + &amp;quot;&amp;#x3D;&amp;quot; + value);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             out.print(&amp;quot;&amp;lt;br&amp;gt;&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;:hexoPostRenderEscape--&gt;</code></pre>
-<ul>
-<li><p><code>String getRealPath(String path)</code> : 获取文件绝对路径【IO流需要路径】</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .java文件</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest request, ServletResponse response)</span> </span>&#123;</span><br><span class="line">       ServletConfig config = getServletConfig();</span><br><span class="line">    ServletContext application = config.getServletContext();</span><br><span class="line">    </span><br><span class="line"> <span class="comment">// 获取文件绝对路径</span></span><br><span class="line">    String realPath = application.getRealPath(<span class="string">&quot;index.html&quot;</span>);</span><br><span class="line"> System.out.println(realPath);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-</li>
-</ul>
-<p>   web.xml文件</p>
-   <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>username<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>password<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>123<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ol start="5">
-<li><p>Servlet、ServletConfig、ServletContext之间的关系</p>
-<ul>
-<li>一个Servlet对应一个ServletConfig；100个Servlet对应100个ServletConfig</li>
-<li>所有的一个Servlet共享一个ServletContext对象</li>
-</ul>
-</li>
-<li><p>ServletContext范围可以跨用户传递数据</p>
-<p>路径总结：</p>
-</li>
-</ol>
-<ul>
-<li><p>超链接（有项目名）</p>
-<p><code>&lt;a href = &quot;/webappname/doSome&quot;&gt;&lt;/a&gt;&gt;</code></p>
-</li>
-<li><p>web.xml中的url-pattern（无项目名）</p>
-<p><code>&lt;url-pattern&gt;/doSome&lt;/url-pattern&gt;</code></p>
-</li>
-<li><p>form表单的action属性</p>
-<p><code>&lt;form action = &quot;/webappname/doSome&quot;&gt;&lt;/form&gt;</code></p>
-</li>
-<li><p>String realPath = application.getRealPath(“/WEB_INF/resource/db.xml”);</p>
-</li>
-</ul>
 
       
 
@@ -324,7 +311,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/14/ServletContext%E6%8E%A5%E5%8F%A3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/17/%E7%A8%8B%E5%BA%8F%E4%B8%AD%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -338,18 +325,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/08/14/%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          欢迎界面配置
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/08/14/ServletConfig%E6%8E%A5%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ServletConfig接口</div>
+    <a href="/2020/08/17/HttpServletRequest%E6%8E%A5%E5%8F%A3%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HttpServletRequest接口中常用方法</div>
       <i class="icon-circle-right"></i>
     </a>
   
