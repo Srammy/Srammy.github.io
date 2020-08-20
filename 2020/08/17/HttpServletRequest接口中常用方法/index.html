@@ -16,7 +16,7 @@
 <meta property="og:description" content="原视频地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vb41187jH?p&#x3D;40 ServletContext是Servlet上下文对象，该接口中也有这样几个方法：  void setAttribute(String name, Object o) :向ServletContext范围中添加数据  Object getAttribute(String name)：向Se">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-17T09:43:16.000Z">
-<meta property="article:modified_time" content="2020-08-17T14:26:13.788Z">
+<meta property="article:modified_time" content="2020-08-20T03:18:19.013Z">
 <meta property="article:author" content="Srammy">
 <meta property="article:tag" content="Servlet">
 <meta name="twitter:card" content="summary">
@@ -64,7 +64,7 @@
 		</nav>
 
 		<nav>
-			总文章数 20
+			总文章数 29
 		</nav>
 		
 		<nav class="header-smart-menu">
@@ -239,7 +239,8 @@
 </ol>
 <ul>
 <li><code>Cookie[] getCookies()</code></li>
-<li><code>HttpSession getSession()</code> </li>
+<li><code>HttpSession getSession()</code>:获取Session对象，若没有获取到session对象，则新建session对象</li>
+<li><code>HttpSession  getSession(boolean create);</code>获取Session对象，若没有获取到session对象，根据create的值判断是否新建session对象。create=true，就创建session；create=false，就返回null。</li>
 </ul>
 <ol start="7">
 <li>关于范围对象的选择</li>
@@ -483,15 +484,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">JAVA基础</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">UML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
             
             <div class="clearfix"></div>
