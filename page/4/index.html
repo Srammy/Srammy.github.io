@@ -6,19 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>HttpServletRequest接口 | Srammy&#39;s Blog</title>
+  <title>Srammy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原视频地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vb41187jH?p&#x3D;38 javax.servlet.http.HttpServletRequest接口  HttpServletRequest是一个接口，Servlet规范中重要接口之一  继承关系：public interface HttpServletRequest extends ServletReques">
-<meta property="og:type" content="article">
-<meta property="og:title" content="HttpServletRequest接口">
-<meta property="og:url" content="http://yoursite.com/2020/08/16/HttpServletRequest%E6%8E%A5%E5%8F%A3/index.html">
+  <meta name="description" content="个人博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Srammy&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
 <meta property="og:site_name" content="Srammy&#39;s Blog">
-<meta property="og:description" content="原视频地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vb41187jH?p&#x3D;38 javax.servlet.http.HttpServletRequest接口  HttpServletRequest是一个接口，Servlet规范中重要接口之一  继承关系：public interface HttpServletRequest extends ServletReques">
+<meta property="og:description" content="个人博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-08-16T12:38:31.000Z">
-<meta property="article:modified_time" content="2020-08-16T15:23:41.689Z">
 <meta property="article:author" content="Srammy">
-<meta property="article:tag" content="Servlet">
+<meta property="article:tag" content="学习记录">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Srammy&#39;s Blog" type="application/atom+xml">
@@ -168,72 +166,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-HttpServletRequest接口" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-git-diff用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      HttpServletRequest接口
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/13/git-diff%E7%94%A8%E6%B3%95/">git diff用法</a>
     </h1>
   
 
         
         
-	<!-- 不蒜子统计 -->
-	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-	</span>
-
-<a href="/2020/08/16/HttpServletRequest%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2020-08-16T12:38:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
+<a href="/2020/08/13/git-diff%E7%94%A8%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-08-13T12:58:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=38">https://www.bilibili.com/video/BV1vb41187jH?p=38</a></p>
-<p><code>javax.servlet.http.HttpServletRequest</code>接口</p>
-<ol>
-<li><p><code>HttpServletRequest</code>是一个接口，Servlet规范中重要接口之一</p>
-</li>
-<li><p>继承关系：<code>public interface HttpServletRequest extends ServletRequest &#123;&#125;</code></p>
-<a id="more"></a>
-</li>
-<li><p><code>HttpServletRequest</code>接口的实现类是WEB容器负责实现的，Tomcat服务器有自己的实现。但是程序员还是只需要面向<code>HTTPServletRequest</code>接口调用方法即可，不用关心具体实现了。</p>
-</li>
-<li><p><code>HTTPServletRequest</code>这个对象中封装了哪些信息呐？</p>
-<p>封装了HTTP请求协议的全部内容</p>
-<ul>
-<li>请求方式</li>
-<li>URI</li>
-<li>协议版本号</li>
-<li>表单提交数据</li>
-<li>……</li>
-</ul>
-</li>
-<li><p><code>HttpServletRequest</code>一般变量的名字叫做：request，表示请求。HttpServletRequest对象代表一次请求，一次请求对应一个request对象，100次请求对应100个request对象，所以request对象的生命周期是短暂的。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--register.html--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>register<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;GBK&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span> = <span class="string">&quot;/webappname/user/save&quot;</span> <span class="attr">method</span> = <span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">            用户名</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;text&quot;</span> <span class="attr">name</span> = <span class="string">&quot;username&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            密码</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;password&quot;</span> <span class="attr">name</span> = <span class="string">&quot;password&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            性别</span><br><span class="line">                男<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;radio&quot;</span> <span class="attr">name</span> = <span class="string">&quot;sex&quot;</span> <span class="attr">value</span> = <span class="string">&quot;m&quot;</span>&gt;</span></span><br><span class="line">                女<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;radio&quot;</span> <span class="attr">name</span> = <span class="string">&quot;sex&quot;</span> <span class="attr">value</span> = <span class="string">&quot;f&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            爱好</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span> = <span class="string">&quot;interest&quot;</span> <span class="attr">value</span> = <span class="string">&quot;sport&quot;</span>&gt;</span>运动</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span> = <span class="string">&quot;interest&quot;</span> <span class="attr">value</span> = <span class="string">&quot;music&quot;</span>&gt;</span>音乐</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span> = <span class="string">&quot;interest&quot;</span> <span class="attr">value</span> = <span class="string">&quot;dance&quot;</span>&gt;</span>跳舞</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span> = <span class="string">&quot;interest&quot;</span> <span class="attr">value</span> = <span class="string">&quot;study&quot;</span>&gt;</span>学习                        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span> = <span class="string">&quot;interest&quot;</span> <span class="attr">value</span> = <span class="string">&quot;read&quot;</span>&gt;</span>阅读</span><br><span class="line">                <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            学历</span><br><span class="line">                <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span> = <span class="string">&quot;grade&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span> = <span class="string">&quot;gz&quot;</span>&gt;</span>高中<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span> = <span class="string">&quot;dz&quot;</span>&gt;</span>大专<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span> = <span class="string">&quot;db&quot;</span>&gt;</span>大本<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            简介</span><br><span class="line">                <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">rows</span> = <span class="string">&quot;10&quot;</span> <span class="attr">cols</span> = <span class="string">&quot;60&quot;</span> <span class="attr">name</span> = <span class="string">&quot;introduce&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--web.xml--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>register.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>save<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--Servlet全类名--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>包名.SaveUserServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>save<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--请求路径--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/user/save<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// SaveUserServlet.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SaveUserServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">// 获取表单提交的用户信息，这些数据被自动封装到request对象中了</span></span><br><span class="line">        <span class="comment">// 从request中获取这些信息</span></span><br><span class="line">        <span class="comment">// 表单数据是这样的格式提交的，POST请求，在请求体中提交，数据格式</span></span><br><span class="line">        <span class="comment">// username=admin&amp;password=123&amp;sex=m&amp;interest=sport&amp;interest=music&amp;grade=dz&amp;introduce=ok</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * Map&lt;String, String[]&gt;</span></span><br><span class="line"><span class="comment">        * key               value</span></span><br><span class="line"><span class="comment">        *-----------------------------------------</span></span><br><span class="line"><span class="comment">        * username          &#123;&quot;admin&quot;&#125;</span></span><br><span class="line"><span class="comment">        * password          &#123;&quot;123&quot;&#125;</span></span><br><span class="line"><span class="comment">        * sex               &#123;&quot;m&quot;&#125;</span></span><br><span class="line"><span class="comment">        * interest          &#123;&quot;sport&quot;, &quot;music&quot;&#125;</span></span><br><span class="line"><span class="comment">        * grade             &#123;&quot;dz&quot;&#125;</span></span><br><span class="line"><span class="comment">        * introduce         &#123;&quot;ok&quot;&#125;</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        String username = request.getParameter(<span class="string">&quot;username&quot;</span>);</span><br><span class="line">        String password = request.getParameter(<span class="string">&quot;password&quot;</span>);</span><br><span class="line">        String sex = request.getParameter(<span class="string">&quot;sex&quot;</span>);</span><br><span class="line">        String interest = request.getParameter(<span class="string">&quot;interest&quot;</span>); <span class="comment">// 获取首元素</span></span><br><span class="line">        String grade = request.getParameter(<span class="string">&quot;grade&quot;</span>);</span><br><span class="line">        String introduce = request.getParameter(<span class="string">&quot;introduce&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 获取所有的兴趣爱好</span></span><br><span class="line">        <span class="comment">// 这个方法适合取复选框checkbox中的数据</span></span><br><span class="line">        String[] interests = request.getParameterValues(<span class="string">&quot;interest&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (String in : interests) &#123;</span><br><span class="line">            System.out.println(in);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 获取整个Map集合</span></span><br><span class="line">        Map&lt;String, String[]&gt; parameterMap = request.getParameterMap();</span><br><span class="line">        Set&lt;String&gt; names = parameterMap.keySet();</span><br><span class="line">        <span class="keyword">for</span> (String name : names) &#123;</span><br><span class="line">            String[] values = parameterMap.get(name);</span><br><span class="line">            System.out.println(name + <span class="string">&quot;=&quot;</span> + values);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 获取参数Map集合所有的key</span></span><br><span class="line">        Enumeration&lt;String&gt; keys = request.getParameterNames();</span><br><span class="line">        <span class="keyword">while</span> (keys.hasMoreElements()) &#123;</span><br><span class="line">            String name = keys.nextElement();</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>HttpServletRequest</code>接口中常用的方法：</p>
-<ul>
-<li>表单提交的数据，会自动被封装到request对象中，request对象中有Map集合存储这些数据，Map集合的key是name，value是一个字符串类型的一维数组<ul>
-<li><strong><code>String getParameter(String name)</code>：通过key获取value这个一维数组中的首元素。通常情况下，这个一维数组中只有一个元素，所以这个方法使用最多。</strong></li>
-<li><code>String[] getParameterValues(String name)</code>：通过Map集合key获取value这个一维数组**(也比较常用)**，这个方法适合取复选框checkbox中的数据</li>
-<li><code>Map getParameterMap()</code>: 获取整个Map集合</li>
-<li><code>Enumeration getParameterNames()</code>：获取整个Map集合的所有key</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-
+        <h1 id="git-diff的使用"><a href="#git-diff的使用" class="headerlink" title="git diff的使用"></a>git diff的使用</h1><h2 id="1-不add修改"><a href="#1-不add修改" class="headerlink" title="1 不add修改"></a>1 不add修改</h2><p>提交后修改了工作区，但是没有add到暂存区</p>
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/%E6%8F%90%E4%BA%A4%E5%90%8E%E4%BF%AE%E6%94%B9%E5%B7%A5%E4%BD%9C%E5%8C%BA.jpg"></p>
+<h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3><p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/git-diff%E7%9A%84%E7%94%A8%E6%B3%95/git-diff.jpg"></p>
+        
+          <a class="article-more-a" href="/2020/08/13/git-diff%E7%94%A8%E6%B3%95/#more">more >></a>
+        
       
 
       
@@ -246,7 +207,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
         		</li>
       		
 		</ul>
@@ -255,84 +216,16 @@
       
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/13/git-diff%E7%94%A8%E6%B3%95/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/16/HttpServletRequest%E6%8E%A5%E5%8F%A3/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/08/17/HttpServletRequest%E6%8E%A5%E5%8F%A3%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          HttpServletRequest接口中常用方法
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/08/16/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">模板方法设计模式</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -352,14 +245,12 @@
 
 
 
-  
-  
-  
 
   
-
   
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
   
 
 
@@ -393,8 +284,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
