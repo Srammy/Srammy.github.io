@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Srammy&#39;s Blog</title>
+  <title>字符串的比较 | Srammy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Srammy&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="str1 &#x3D;&#x3D; str2 ：比较两个引用类型的变量是否指向同一内存地址str1 .equals(str2)：比较两个字符串的内容是否相同str1.compareTo(str2)：按字典顺序比较两个字符串内容的大小。如果内容相同，返回0；&gt;0,str1大于str2；&lt;0,str1小于str2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符串的比较">
+<meta property="og:url" content="http://yoursite.com/2020/08/28/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83/index.html">
 <meta property="og:site_name" content="Srammy&#39;s Blog">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="str1 &#x3D;&#x3D; str2 ：比较两个引用类型的变量是否指向同一内存地址str1 .equals(str2)：比较两个字符串的内容是否相同str1.compareTo(str2)：按字典顺序比较两个字符串内容的大小。如果内容相同，返回0；&gt;0,str1大于str2；&lt;0,str1小于str2">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-28T08:01:03.000Z">
+<meta property="article:modified_time" content="2020-08-28T08:08:45.427Z">
 <meta property="article:author" content="Srammy">
-<meta property="article:tag" content="学习记录">
+<meta property="article:tag" content="JAVA基础">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Srammy&#39;s Blog" type="application/atom+xml">
@@ -172,100 +174,24 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-将数组拼接为一个字符串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-字符串的比较" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/28/%E5%B0%86%E6%95%B0%E7%BB%84%E6%8B%BC%E6%8E%A5%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/">将数组拼接为一个字符串</a>
+    <h1 class="article-title" itemprop="name">
+      字符串的比较
     </h1>
   
 
         
         
-<a href="/2020/08/28/%E5%B0%86%E6%95%B0%E7%BB%84%E6%8B%BC%E6%8E%A5%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="archive-article-date">
-  	<time datetime="2020-08-28T08:15:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="字符串数组的拼接"><a href="#字符串数组的拼接" class="headerlink" title="字符串数组的拼接"></a>字符串数组的拼接</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String[] strs = <span class="keyword">new</span> String[]&#123;<span class="string">&quot;Srammy&quot;</span>, <span class="string">&quot;要努力学&quot;</span>, <span class="string">&quot;JAVA!&quot;</span>&#125;;</span><br><span class="line">String a = <span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="keyword">for</span>(String s : strs) &#123;</span><br><span class="line">    a = a + s;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(a); <span class="comment">// 输出---&gt; Srammy要努力学JAVA!</span></span><br></pre></td></tr></table></figure>
+	<!-- 不蒜子统计 -->
+	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+	</span>
 
-<p>除了上面的方法，还可以使用StringBuffer</p>
-        
-          <a class="article-more-a" href="/2020/08/28/%E5%B0%86%E6%95%B0%E7%BB%84%E6%8B%BC%E6%8E%A5%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JAVA基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/28/%E5%B0%86%E6%95%B0%E7%BB%84%E6%8B%BC%E6%8E%A5%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-字符串的比较" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/28/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83/">字符串的比较</a>
-    </h1>
-  
-
-        
-        
 <a href="/2020/08/28/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83/" class="archive-article-date">
   	<time datetime="2020-08-28T08:01:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
 </a>
@@ -275,161 +201,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><code>str1 == str2 </code>：比较两个引用类型的变量是否指向同一内存地址<br><code>str1 .equals(str2)</code>：比较两个字符串的内容是否相同<br><code>str1.compareTo(str2)</code>：按字典顺序比较两个字符串内容的大小。如果内容相同，返回0；&gt;0,<code>str1</code>大于<code>str2</code>；&lt;0,<code>str1</code>小于<code>str2</code></p>
-        
-          <a class="article-more-a" href="/2020/08/28/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83/#more">more >></a>
-        
-      
+<a id="more"></a>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JAVA基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<p>第一种创建字符串的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">&quot;def&quot;</span>;</span><br><span class="line">String str2 = <span class="string">&quot;def&quot;</span>;</span><br><span class="line">System.out.println(str1 == str2); <span class="comment">// true</span></span><br><span class="line">System.out.println(str1.equals(str2)); <span class="comment">// true</span></span><br><span class="line">System.out.println(str1.compareTo(str2)); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
 
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/28/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-快速排序的两种写法（升序和降序）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/28/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95%EF%BC%88%E5%8D%87%E5%BA%8F%E5%92%8C%E9%99%8D%E5%BA%8F%EF%BC%89/">快速排序的两种写法（升序和降序）</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/28/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95%EF%BC%88%E5%8D%87%E5%BA%8F%E5%92%8C%E9%99%8D%E5%BA%8F%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-08-28T07:21:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>快速排序的时间复杂度为O(NlogN)，是一种不稳定的算法。</p>
-        
-          <a class="article-more-a" href="/2020/08/28/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95%EF%BC%88%E5%8D%87%E5%BA%8F%E5%92%8C%E9%99%8D%E5%BA%8F%EF%BC%89/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构和算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/28/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95%EF%BC%88%E5%8D%87%E5%BA%8F%E5%92%8C%E9%99%8D%E5%BA%8F%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-StringBuffer的使用：将字符串数组拼接为一个字符串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/28/StringBuffer%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%9A%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84%E6%8B%BC%E6%8E%A5%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/">StringBuffer的使用：将字符串数组拼接为一个字符串</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/28/StringBuffer%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%9A%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84%E6%8B%BC%E6%8E%A5%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="archive-article-date">
-  	<time datetime="2020-08-28T07:14:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用<code>append()</code>方法在末尾添加数据，最终用<code>toString</code>方法转为字符串</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String[] strs = <span class="keyword">new</span> String[]&#123;<span class="string">&quot;Srammy&quot;</span>, <span class="string">&quot;要努力学&quot;</span>, <span class="string">&quot;JAVA!&quot;</span>&#125;;</span><br><span class="line">StringBuilder res = <span class="keyword">new</span> StringBuilder();</span><br><span class="line"><span class="keyword">for</span>(String s : strs) &#123;</span><br><span class="line">    res.append(s);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(res.toString()); <span class="comment">// 输出---&gt; Srammy要努力学JAVA!</span></span><br></pre></td></tr></table></figure>
+<p>第二种创建字符串的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="keyword">new</span> String(<span class="string">&quot;def&quot;</span>);</span><br><span class="line">String str2 = <span class="keyword">new</span> String(<span class="string">&quot;def&quot;</span>);</span><br><span class="line">System.out.println(str1 == str2); <span class="comment">// false</span></span><br><span class="line">System.out.println(str1.equals(str2)); <span class="comment">// true</span></span><br><span class="line">System.out.println(str1.compareTo(str2)); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
 
 
       
@@ -453,16 +231,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/28/StringBuffer%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%9A%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84%E6%8B%BC%E6%8E%A5%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/28/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/08/28/%E5%B0%86%E6%95%B0%E7%BB%84%E6%8B%BC%E6%8E%A5%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          将数组拼接为一个字符串
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/08/28/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95%EF%BC%88%E5%8D%87%E5%BA%8F%E5%92%8C%E9%99%8D%E5%BA%8F%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">快速排序的两种写法（升序和降序）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -482,487 +328,14 @@
 
 
 
-
-  
-    <article id="post-int转为String" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/28/int%E8%BD%AC%E4%B8%BAString/">int转为String</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/28/int%E8%BD%AC%E4%B8%BAString/" class="archive-article-date">
-  	<time datetime="2020-08-28T06:51:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>主要有三种方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">12</span>;</span><br><span class="line"><span class="comment">// 方法1</span></span><br><span class="line">String str1 = String.valueOf(a);</span><br><span class="line"><span class="comment">// 方法2</span></span><br><span class="line">String str2 = Integer.toString(a);</span><br><span class="line"><span class="comment">// 方法3：</span></span><br><span class="line">String str3 = a + <span class="string">&quot;&quot;</span>;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JAVA基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/28/int%E8%BD%AC%E4%B8%BAString/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-分布式锁" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/25/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/">分布式锁</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/25/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" class="archive-article-date">
-  	<time datetime="2020-08-25T14:21:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>面试时问分布式锁的原理、优缺点</p>
-<h1 id="使用锁的场景"><a href="#使用锁的场景" class="headerlink" title="使用锁的场景"></a>使用锁的场景</h1><p>同事满足以下三个条件，一旦三个中缺一个，都不需要上锁。<br>1.共享资源<br>2.资源共享时是互斥的<br>3.多任务环境</p>
-        
-          <a class="article-more-a" href="/2020/08/25/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">分布式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/25/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-将本地项目上传到GitHub" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/24/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0GitHub/">将本地项目上传到GitHub</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/24/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0GitHub/" class="archive-article-date">
-  	<time datetime="2020-08-24T08:58:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-未使用版本控制"><a href="#1-未使用版本控制" class="headerlink" title="1.未使用版本控制"></a>1.未使用版本控制</h1>
-        
-          <a class="article-more-a" href="/2020/08/24/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0GitHub/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/24/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0GitHub/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-模拟Servlet本质" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/20/%E6%A8%A1%E6%8B%9FServlet%E6%9C%AC%E8%B4%A8/">模拟Servlet本质</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/20/%E6%A8%A1%E6%8B%9FServlet%E6%9C%AC%E8%B4%A8/" class="archive-article-date">
-  	<time datetime="2020-08-20T08:46:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=6">https://www.bilibili.com/video/BV1vb41187jH?p=6</a></p>
-        
-          <a class="article-more-a" href="/2020/08/20/%E6%A8%A1%E6%8B%9FServlet%E6%9C%AC%E8%B4%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/20/%E6%A8%A1%E6%8B%9FServlet%E6%9C%AC%E8%B4%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-会话对象记录登录状态" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/20/%E4%BC%9A%E8%AF%9D%E5%AF%B9%E8%B1%A1%E8%AE%B0%E5%BD%95%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81/">会话对象记录登录状态</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/20/%E4%BC%9A%E8%AF%9D%E5%AF%B9%E8%B1%A1%E8%AE%B0%E5%BD%95%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81/" class="archive-article-date">
-  	<time datetime="2020-08-20T03:24:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>完成以下功能：</p>
-<ul>
-<li><p>登录</p>
-</li>
-<li><p>登录成功后将此“已登录”状态保存</p>
-</li>
-<li><p>实现“显示员工列表”功能</p>
-        
-          <a class="article-more-a" href="/2020/08/20/%E4%BC%9A%E8%AF%9D%E5%AF%B9%E8%B1%A1%E8%AE%B0%E5%BD%95%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/20/%E4%BC%9A%E8%AF%9D%E5%AF%B9%E8%B1%A1%E8%AE%B0%E5%BD%95%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HttpSession" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/19/HttpSession/">HttpSession</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/19/HttpSession/" class="archive-article-date">
-  	<time datetime="2020-08-19T13:24:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=56">https://www.bilibili.com/video/BV1vb41187jH?p=56</a></p>
-<ol>
-<li><p>Session表示会话，不止是在javaweb中存在，只要是web开发，都有这种会话机制</p>
-</li>
-<li><p>在java中会话对应的类型是：<code>javax.servlet.http.HttpSession</code>，简称session/会话</p>
-</li>
-<li><p>Cookie可以将会话状态保存在客户端，HttpSession可以将会话状态保存在服务器端</p>
-        
-          <a class="article-more-a" href="/2020/08/19/HttpSession/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/19/HttpSession/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &gt;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -996,8 +369,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
