@@ -283,70 +283,9 @@
 <p>在普通用户情况下，执行<code>yum install git</code>会出现权限不够的提示</p>
 <p>执行<code>su root</code>切换到root用户</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装Git</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看安装情况</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<h1 id="二-使用源码安装"><a href="#二-使用源码安装" class="headerlink" title="二. 使用源码安装"></a>二. 使用源码安装</h1><p>使用yum安装时，Git的版本会比较低，可以采用源码安装来解决。</p>
-<ol>
-<li><p>卸载旧版本的Git</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum remove git</span><br></pre></td></tr></table></figure>
-
-<p>查看是否卸载成功</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装依赖</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel asciidoc</span><br><span class="line">yum install  gcc perl-ExtUtils-MakeMaker</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用源码进行安装</p>
-<ul>
-<li><p>切换到源码包文件存放的目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src/</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>下载安装包</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.23.0.tar.xz</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>解压，并进入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf git-2.23.0.tar.xz</span><br><span class="line"><span class="built_in">cd</span> git-2.23.0/</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编译并且安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make prefix=/usr/<span class="built_in">local</span>/git all</span><br><span class="line">make prefix=/usr/<span class="built_in">local</span>/git install</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将git指令添加到bash中</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
-
-<p>在最后一行加入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;git&#x2F;bin</span><br></pre></td></tr></table></figure>
-
-<p>使配置文件生效</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看版本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>执行完上述操作，只能root使用Git</p>
-<p>如果非root用户使用，需要执行以下操作</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;export PATH=<span class="variable">$PATH</span>:/usr/local/git/bin&quot;</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<p>参考资料：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Hi-blog/p/How-To-Update-Git-On-CentOS7.html">https://www.cnblogs.com/Hi-blog/p/How-To-Update-Git-On-CentOS7.html</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c6f0aadd4afd">https://www.jianshu.com/p/c6f0aadd4afd</a></li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2020/08/29/CentOS7%E5%AE%89%E8%A3%85Git/#more">more >></a>
+        
       
 
       
