@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>基本数据类型转换 | Srammy&#39;s Blog</title>
+  <title>二分搜索 | Srammy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="byte,short,char-----&gt;int------&gt;long------&gt;float-----&gt;double不同数据类型运行运算时，都转换为较大的数据类型（向上转型），最后结果也是较大的数据类型。当然也可以强制类型转换为需要的类型（强制向下转型）。">
+  <meta name="description" content="在没有重复值的排序数组中搜索，或者不关心是否有重复值1234567891011121314151617181920&#x2F;** @nums：排序数组* @target：要搜索的值* @return：-1，没有target值;!&#x3D;-1,target在nums中的索引*&#x2F;public int binarySearch(int[] nums, int target) &amp;#123;    int left &#x3D;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基本数据类型转换">
-<meta property="og:url" content="http://yoursite.com/2020/08/14/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/index.html">
+<meta property="og:title" content="二分搜索">
+<meta property="og:url" content="http://yoursite.com/2020/09/01/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/index.html">
 <meta property="og:site_name" content="Srammy&#39;s Blog">
-<meta property="og:description" content="byte,short,char-----&gt;int------&gt;long------&gt;float-----&gt;double不同数据类型运行运算时，都转换为较大的数据类型（向上转型），最后结果也是较大的数据类型。当然也可以强制类型转换为需要的类型（强制向下转型）。">
+<meta property="og:description" content="在没有重复值的排序数组中搜索，或者不关心是否有重复值1234567891011121314151617181920&#x2F;** @nums：排序数组* @target：要搜索的值* @return：-1，没有target值;!&#x3D;-1,target在nums中的索引*&#x2F;public int binarySearch(int[] nums, int target) &amp;#123;    int left &#x3D;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-08-14T13:30:59.000Z">
-<meta property="article:modified_time" content="2020-08-21T03:38:16.422Z">
+<meta property="article:published_time" content="2020-09-01T14:08:40.000Z">
+<meta property="article:modified_time" content="2020-09-01T14:10:40.999Z">
 <meta property="article:author" content="Srammy">
 <meta property="article:tag" content="JAVA基础">
 <meta name="twitter:card" content="summary">
@@ -180,14 +180,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-基本数据类型转换" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-二分搜索" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      基本数据类型转换
+      二分搜索
     </h1>
   
 
@@ -198,15 +198,23 @@
 		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
 	</span>
 
-<a href="/2020/08/14/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="archive-article-date">
-  	<time datetime="2020-08-14T13:30:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
+<a href="/2020/09/01/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/" class="archive-article-date">
+  	<time datetime="2020-09-01T14:08:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><code>byte,short,char-----&gt;int------&gt;long------&gt;float-----&gt;double</code><br>不同数据类型运行运算时，都转换为较大的数据类型（向上转型），最后结果也是较大的数据类型。<br>当然也可以强制类型转换为需要的类型（强制向下转型）。</p>
+        <h1 id="在没有重复值的排序数组中搜索，或者不关心是否有重复值"><a href="#在没有重复值的排序数组中搜索，或者不关心是否有重复值" class="headerlink" title="在没有重复值的排序数组中搜索，或者不关心是否有重复值"></a>在没有重复值的排序数组中搜索，或者不关心是否有重复值</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* @nums：排序数组</span></span><br><span class="line"><span class="comment">* @target：要搜索的值</span></span><br><span class="line"><span class="comment">* @return：-1，没有target值;!=-1,target在nums中的索引</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>; </span><br><span class="line">    <span class="keyword">int</span> right = nums.length - <span class="number">1</span>; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(left &lt;= right) &#123; </span><br><span class="line">        <span class="keyword">int</span> mid = left + (right- left) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(nums[mid] == target)</span><br><span class="line">            <span class="keyword">return</span> mid; </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target)</span><br><span class="line">            left = mid + <span class="number">1</span>; </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target)</span><br><span class="line">            right = mid - <span class="number">1</span>; </span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h1 id="在有重复值的排序数组中搜索左侧边界"><a href="#在有重复值的排序数组中搜索左侧边界" class="headerlink" title="在有重复值的排序数组中搜索左侧边界"></a>在有重复值的排序数组中搜索左侧边界</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* @nums：排序数组</span></span><br><span class="line"><span class="comment">* @target：要搜索的值</span></span><br><span class="line"><span class="comment">* @return：-1，没有target值;!=-1,target在nums中第一次出现时的索引</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">leftBound</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nums.length == <span class="number">0</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> right = nums.length; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123; </span><br><span class="line">        <span class="keyword">int</span> mid = left + (right- left) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            right = mid; <span class="comment">// 找到 target 时不要立即返回，而是缩小「搜索区间」的上界 right，在区间 [left, mid) 中继续搜索，即不断向左收缩，达到锁定左侧边界的目的。</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">            right = mid; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// while循环结束后，left保存的是k第一次出现时的索引 left的取值范围是[0, array.length]</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// target 比所有数都大</span></span><br><span class="line">    <span class="keyword">if</span> (left == nums.length) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 处理left = 0的情况。</span></span><br><span class="line">    <span class="keyword">return</span> nums[left] == target ? left : -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="在有重复值的排序数组中搜索右侧边界"><a href="#在有重复值的排序数组中搜索右侧边界" class="headerlink" title="在有重复值的排序数组中搜索右侧边界"></a>在有重复值的排序数组中搜索右侧边界</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* @nums：排序数组</span></span><br><span class="line"><span class="comment">* @target：要搜索的值</span></span><br><span class="line"><span class="comment">* @return：-1，没有target值;!=-1,target在nums中第一次出现时的索引</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rightBound</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nums.length == <span class="number">0</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (left + right) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>; <span class="comment">// 当 nums[mid] == target 时，不要立即返回，而是增大「搜索区间」的下界 left，使得区间不断向右收缩，达到锁定右侧边界的目的。</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">            right = mid;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// while循环结束后，left = right,left 的取值范围是 [0, nums.length]</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// target 比所有数都小</span></span><br><span class="line">    <span class="keyword">if</span> (left == <span class="number">0</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> nums[left-<span class="number">1</span>] == target ? (left-<span class="number">1</span>) : -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&amp;mid=2247484507&amp;idx=1&amp;sn=36b8808fb8fac0e1906493347d3c96e6&amp;source=41#wechat_redirect">https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&amp;mid=2247484507&amp;idx=1&amp;sn=36b8808fb8fac0e1906493347d3c96e6&amp;source=41#wechat_redirect</a></p>
 
       
 
@@ -276,7 +284,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/14/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/01/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -290,18 +298,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/08/14/String%E8%BD%AC%E4%B8%BAint/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/09/01/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97PriorityQueue%E4%BD%9C%E4%B8%BA%E5%A0%86/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          String转为int
+          优先队列PriorityQueue作为堆
         
       </div>
     </a>
   
   
-    <a href="/2020/08/14/%E4%B8%80%E7%BB%B4%E3%80%81%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">一维、二维数组</div>
+    <a href="/2020/08/29/%E4%BD%BF%E7%94%A8SFTP%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用SFTP上传和下载文件</div>
       <i class="icon-circle-right"></i>
     </a>
   
