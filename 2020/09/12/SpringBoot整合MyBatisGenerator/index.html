@@ -6,20 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>字符串的比较 | Srammy&#39;s Blog</title>
+  <title>SpringBoot整合MyBatisGenerator | Srammy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="str1 &#x3D;&#x3D; str2 ：比较两个引用类型的变量是否指向同一内存地址str1 .equals(str2)：比较两个字符串的内容是否相同str1.compareTo(str2)：按字典顺序比较两个字符串内容的大小。如果内容相同，返回0；&gt;0,str1大于str2；&lt;0,str1小于str2">
+  <meta name="description" content="1. pom文件引入该插件在引入插件的同时要加入数据库依赖，这里使用的是MySQL 8">
 <meta property="og:type" content="article">
-<meta property="og:title" content="字符串的比较">
-<meta property="og:url" content="http://yoursite.com/2020/08/28/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83/index.html">
+<meta property="og:title" content="SpringBoot整合MyBatisGenerator">
+<meta property="og:url" content="http://yoursite.com/2020/09/12/SpringBoot%E6%95%B4%E5%90%88MyBatisGenerator/index.html">
 <meta property="og:site_name" content="Srammy&#39;s Blog">
-<meta property="og:description" content="str1 &#x3D;&#x3D; str2 ：比较两个引用类型的变量是否指向同一内存地址str1 .equals(str2)：比较两个字符串的内容是否相同str1.compareTo(str2)：按字典顺序比较两个字符串内容的大小。如果内容相同，返回0；&gt;0,str1大于str2；&lt;0,str1小于str2">
+<meta property="og:description" content="1. pom文件引入该插件在引入插件的同时要加入数据库依赖，这里使用的是MySQL 8">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-08-28T08:01:03.000Z">
-<meta property="article:modified_time" content="2020-08-28T08:08:45.427Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/mybatisgenerator/%E6%97%B6%E5%8C%BA%E9%94%99%E8%AF%AF.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/mybatisgenerator/%E6%9E%84%E5%BB%BA%E6%88%90%E5%8A%9F.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/mybatisgenerator/%E6%9E%84%E5%BB%BA%E7%94%9F%E6%88%90.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/mybatisgenerator/%E5%8A%A0%E6%B3%A8%E8%A7%A3.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/mybatisgenerator/%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84.jpg">
+<meta property="article:published_time" content="2020-09-12T08:31:00.000Z">
+<meta property="article:modified_time" content="2020-09-12T09:18:30.103Z">
 <meta property="article:author" content="Srammy">
-<meta property="article:tag" content="JAVA基础">
+<meta property="article:tag" content="Spring">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/mybatisgenerator/%E6%97%B6%E5%8C%BA%E9%94%99%E8%AF%AF.PNG">
   
     <link rel="alternative" href="/atom.xml" title="Srammy&#39;s Blog" type="application/atom+xml">
   
@@ -186,14 +192,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-字符串的比较" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-SpringBoot整合MyBatisGenerator" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      字符串的比较
+      SpringBoot整合MyBatisGenerator
     </h1>
   
 
@@ -204,23 +210,37 @@
 		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
 	</span>
 
-<a href="/2020/08/28/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83/" class="archive-article-date">
-  	<time datetime="2020-08-28T08:01:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
+<a href="/2020/09/12/SpringBoot%E6%95%B4%E5%90%88MyBatisGenerator/" class="archive-article-date">
+  	<time datetime="2020-09-12T08:31:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><code>str1 == str2 </code>：比较两个引用类型的变量是否指向同一内存地址<br><code>str1 .equals(str2)</code>：比较两个字符串的内容是否相同<br><code>str1.compareTo(str2)</code>：按字典顺序比较两个字符串内容的大小。如果内容相同，返回0；&gt;0,<code>str1</code>大于<code>str2</code>；&lt;0,<code>str1</code>小于<code>str2</code></p>
+        <h1 id="1-pom文件引入该插件"><a href="#1-pom文件引入该插件" class="headerlink" title="1. pom文件引入该插件"></a>1. pom文件引入该插件</h1><p>在引入插件的同时要加入数据库依赖，这里使用的是<code>MySQL 8</code></p>
 <a id="more"></a>
 
-<p>第一种创建字符串的方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">&quot;def&quot;</span>;</span><br><span class="line">String str2 = <span class="string">&quot;def&quot;</span>;</span><br><span class="line">System.out.println(str1 == str2); <span class="comment">// true</span></span><br><span class="line">System.out.println(str1.equals(str2)); <span class="comment">// true</span></span><br><span class="line">System.out.println(str1.compareTo(str2)); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.generator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-generator-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.7<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.15<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>第二种创建字符串的方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="keyword">new</span> String(<span class="string">&quot;def&quot;</span>);</span><br><span class="line">String str2 = <span class="keyword">new</span> String(<span class="string">&quot;def&quot;</span>);</span><br><span class="line">System.out.println(str1 == str2); <span class="comment">// false</span></span><br><span class="line">System.out.println(str1.equals(str2)); <span class="comment">// true</span></span><br><span class="line">System.out.println(str1.compareTo(str2)); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<p>其他依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.15<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h1 id="2-MyBatisGenerator的配置文件"><a href="#2-MyBatisGenerator的配置文件" class="headerlink" title="2. MyBatisGenerator的配置文件"></a>2. MyBatisGenerator的配置文件</h1><p>在<code>&lt;jdbcConnection&gt;</code>标签中，如果使用的是<code>MySQL 8</code>，则<code>connectionURL=&quot;jdbc:mysql://localhost:3306/springboot_mybatis?serverTimezone=UTC&quot;</code>需要加入时区<code>serverTimezone=UTC</code>，不加时，在运行<code>MyBatisGenerator</code>时会产生如下错误。如果是<code>MySQL5</code>则不存在该问题。</p>
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/mybatisgenerator/%E6%97%B6%E5%8C%BA%E9%94%99%E8%AF%AF.PNG"></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">generatorConfiguration</span></span></span><br><span class="line"><span class="meta">        <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">        <span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">generatorConfiguration</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">context</span> <span class="attr">id</span>=<span class="string">&quot;DB2Tables&quot;</span> <span class="attr">targetRuntime</span>=<span class="string">&quot;MyBatis3&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--数据库驱动、链接URL、用户名、密码 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdbcConnection</span> <span class="attr">driverClass</span>=<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">connectionURL</span>=<span class="string">&quot;jdbc:mysql://localhost:3306/springboot_mybatis?serverTimezone=UTC&quot;</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">userId</span>=<span class="string">&quot;root&quot;</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">password</span>=<span class="string">&quot;123456&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">jdbcConnection</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaTypeResolver</span> &gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;forceBigDecimals&quot;</span> <span class="attr">value</span>=<span class="string">&quot;false&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaTypeResolver</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 生成模型(实体)的包名和位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaModelGenerator</span> <span class="attr">targetPackage</span>=<span class="string">&quot;demo.srammy.mybatisgenerator.model&quot;</span> <span class="attr">targetProject</span>=<span class="string">&quot;src\main\java&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;enableSubPackages&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;trimStrings&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaModelGenerator</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 生成映射文件mapper.xml的包名和位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">sqlMapGenerator</span> <span class="attr">targetPackage</span>=<span class="string">&quot;mapper&quot;</span>  <span class="attr">targetProject</span>=<span class="string">&quot;src\main\resources&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;enableSubPackages&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">sqlMapGenerator</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 生成DAO的包名和位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaClientGenerator</span> <span class="attr">type</span>=<span class="string">&quot;XMLMAPPER&quot;</span> <span class="attr">targetPackage</span>=<span class="string">&quot;demo.srammy.mybatisgenerator.dao&quot;</span>  <span class="attr">targetProject</span>=<span class="string">&quot;src\main\java&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;enableSubPackages&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaClientGenerator</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">&quot;t_user&quot;</span> <span class="attr">domainObjectName</span>=<span class="string">&quot;User&quot;</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">context</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">generatorConfiguration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-cmd中执行构建命令"><a href="#3-cmd中执行构建命令" class="headerlink" title="3. cmd中执行构建命令"></a>3. cmd中执行构建命令</h1><p>切换到当前工程的目录下，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn -Dmybatis.generator.overwrite=<span class="literal">true</span> mybatis-generator:generate</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/mybatisgenerator/%E6%9E%84%E5%BB%BA%E6%88%90%E5%8A%9F.jpg"></p>
+<h1 id="4-构建后新生的文件"><a href="#4-构建后新生的文件" class="headerlink" title="4. 构建后新生的文件"></a>4. 构建后新生的文件</h1><p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/mybatisgenerator/%E6%9E%84%E5%BB%BA%E7%94%9F%E6%88%90.jpg"></p>
+<p>新生成的UserMapper.java中需要加入@Repository注解</p>
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/mybatisgenerator/%E5%8A%A0%E6%B3%A8%E8%A7%A3.jpg"></p>
+<h1 id="5-配置文件"><a href="#5-配置文件" class="headerlink" title="5. 配置文件"></a>5. 配置文件</h1><p>数据库连接url要指定时区（这里使用<code>MySQL 8</code>）</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">server.port</span> = <span class="string">8089</span></span><br><span class="line"><span class="comment">################### MYSQL配置</span></span><br><span class="line"><span class="meta">spring.datasource.url</span>=<span class="string">jdbc:mysql://localhost:3306/springboot_mybatis?serverTimezone=GMT</span></span><br><span class="line"><span class="meta">spring.datasource.username</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">spring.datasource.password</span>=<span class="string">123456</span></span><br><span class="line"><span class="meta">spring.datasource.driver-class-name</span>=<span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="comment">################### Mybatis</span></span><br><span class="line"><span class="meta">mybatis.mapper-locations</span>=<span class="string">classpath:mapper/*.xml</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="6-工程结构"><a href="#6-工程结构" class="headerlink" title="6. 工程结构"></a>6. 工程结构</h1><p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/mybatisgenerator/%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84.jpg"></p>
 
       
 
@@ -234,7 +254,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JAVA基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
         		</li>
       		
 		</ul>
@@ -290,7 +310,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/28/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/12/SpringBoot%E6%95%B4%E5%90%88MyBatisGenerator/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -304,18 +324,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/08/28/%E5%B0%86%E6%95%B0%E7%BB%84%E6%8B%BC%E6%8E%A5%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/09/12/SpringBoot%E6%95%B4%E5%90%88Druid/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          将数组拼接为一个字符串
+          SpringBoot整合Druid
         
       </div>
     </a>
   
   
-    <a href="/2020/08/28/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95%EF%BC%88%E5%8D%87%E5%BA%8F%E5%92%8C%E9%99%8D%E5%BA%8F%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">快速排序的两种写法（升序和降序）</div>
+    <a href="/2020/09/12/SpringBoot%E6%95%B4%E5%90%88Mybatis/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpringBoot整合Mybatis</div>
       <i class="icon-circle-right"></i>
     </a>
   
