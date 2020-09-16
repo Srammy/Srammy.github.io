@@ -6,18 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/8 | Srammy&#39;s Blog</title>
+  <title>SpringBoot项目部署于外部Tomcat | Srammy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Srammy&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/08/page/2/index.html">
+  <meta name="description" content="1. 修改打包方式在pom.xml中将打包方式配置为war包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot项目部署于外部Tomcat">
+<meta property="og:url" content="http://yoursite.com/2020/09/16/SpringBoot%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E4%BA%8E%E5%A4%96%E9%83%A8Tomcat/index.html">
 <meta property="og:site_name" content="Srammy&#39;s Blog">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="1. 修改打包方式在pom.xml中将打包方式配置为war包">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/%E5%A4%96%E9%83%A8tomcat/%E5%90%AF%E5%8A%A8%E7%B1%BB.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/%E5%A4%96%E9%83%A8tomcat/war%E5%8C%85.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/%E5%A4%96%E9%83%A8tomcat/%E4%B8%8B%E8%BD%BDtomcat.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/%E5%A4%96%E9%83%A8tomcat/%E6%94%BE%E7%BD%AE.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/%E5%A4%96%E9%83%A8tomcat/%E5%90%AF%E5%8A%A8%E8%AE%BF%E9%97%AE.jpg">
+<meta property="article:published_time" content="2020-09-16T13:11:51.000Z">
+<meta property="article:modified_time" content="2020-09-16T13:48:23.368Z">
 <meta property="article:author" content="Srammy">
-<meta property="article:tag" content="学习记录">
+<meta property="article:tag" content="Spring">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/%E5%A4%96%E9%83%A8tomcat/%E5%90%AF%E5%8A%A8%E7%B1%BB.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Srammy&#39;s Blog" type="application/atom+xml">
   
@@ -184,415 +192,179 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-SpringBoot项目部署于外部Tomcat" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SpringBoot项目部署于外部Tomcat
+    </h1>
+  
+
+        
+        
+	<!-- 不蒜子统计 -->
+	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+<a href="/2020/09/16/SpringBoot%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E4%BA%8E%E5%A4%96%E9%83%A8Tomcat/" class="archive-article-date">
+  	<time datetime="2020-09-16T13:11:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-16</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-修改打包方式"><a href="#1-修改打包方式" class="headerlink" title="1. 修改打包方式"></a>1. 修改打包方式</h1><p>在<code>pom.xml</code>中将打包方式配置为war包</p>
+<a id="more"></a>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>demo.srammy<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springboottomcat<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span>war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="2-移除SpringBoot内嵌的Tomcat依赖"><a href="#2-移除SpringBoot内嵌的Tomcat依赖" class="headerlink" title="2. 移除SpringBoot内嵌的Tomcat依赖"></a>2. 移除SpringBoot内嵌的Tomcat依赖</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 移除SpringBoot内嵌的Tomcat依赖 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-tomcat<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-添加servlet-api依赖"><a href="#3-添加servlet-api依赖" class="headerlink" title="3. 添加servlet-api依赖"></a>3. 添加servlet-api依赖</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="4-修改启动类，重写初始化方法"><a href="#4-修改启动类，重写初始化方法" class="headerlink" title="4. 修改启动类，重写初始化方法"></a>4. 修改启动类，重写初始化方法</h1><p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/%E5%A4%96%E9%83%A8tomcat/%E5%90%AF%E5%8A%A8%E7%B1%BB.jpg"></p>
+<p>在与原启动类同级的路径下，新建一个启动类<code>SpringBootStartApplication</code>，内容为</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 修改启动类，继承 SpringBootServletInitializer 并重写 configure 方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringBootStartApplication</span> <span class="keyword">extends</span> <span class="title">SpringBootServletInitializer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> SpringApplicationBuilder <span class="title">configure</span><span class="params">(SpringApplicationBuilder builder)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 这里使用原来的启动类，即SpringboottomcatApplication.class</span></span><br><span class="line">        <span class="keyword">return</span> builder.sources(SpringboottomcatApplication.class);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-打包"><a href="#5-打包" class="headerlink" title="5. 打包"></a>5. 打包</h1><p>在SpringBoot项目根路径（pom.xml所在路径）下执行下述打包命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean package -Dmaven.test.skip=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/%E5%A4%96%E9%83%A8tomcat/war%E5%8C%85.jpg"></p>
+<h1 id="6-下载Tomcat"><a href="#6-下载Tomcat" class="headerlink" title="6. 下载Tomcat"></a>6. 下载Tomcat</h1><p>Tomcat官网：<a target="_blank" rel="noopener" href="https://tomcat.apache.org/">https://tomcat.apache.org/</a>。这里下载的是tomcat8.5.58 32位版本</p>
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/%E5%A4%96%E9%83%A8tomcat/%E4%B8%8B%E8%BD%BDtomcat.jpg"></p>
+<h1 id="7-将war包放到Tomcat的webapp目录下"><a href="#7-将war包放到Tomcat的webapp目录下" class="headerlink" title="7. 将war包放到Tomcat的webapp目录下"></a>7. 将war包放到Tomcat的webapp目录下</h1><p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/%E5%A4%96%E9%83%A8tomcat/%E6%94%BE%E7%BD%AE.png"></p>
+<h1 id="8-启动Tomcat，并访问"><a href="#8-启动Tomcat，并访问" class="headerlink" title="8. 启动Tomcat，并访问"></a>8. 启动Tomcat，并访问</h1><p>浏览器地址栏输入：<code>http://ip:[端口号]/war包名/uri</code></p>
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/%E5%A4%96%E9%83%A8tomcat/%E5%90%AF%E5%8A%A8%E8%AE%BF%E9%97%AE.jpg"></p>
+<p>参考：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.codesheep.cn/2018/06/05/SpringBoot%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2%E4%BA%8E%E5%A4%96%E7%BD%AETomcat%E5%AE%B9%E5%99%A8/">https://www.codesheep.cn/2018/06/05/SpringBoot%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2%E4%BA%8E%E5%A4%96%E7%BD%AETomcat%E5%AE%B9%E5%99%A8/</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/tuanz/p/11204971.html">https://www.cnblogs.com/tuanz/p/11204971.html</a></p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/20/%E4%BC%9A%E8%AF%9D%E5%AF%B9%E8%B1%A1%E8%AE%B0%E5%BD%95%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81/" class="archive-article-date">
-  	<time datetime="2020-08-20T03:24:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/20/%E4%BC%9A%E8%AF%9D%E5%AF%B9%E8%B1%A1%E8%AE%B0%E5%BD%95%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81/">会话对象记录登录状态</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/16/SpringBoot%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E4%BA%8E%E5%A4%96%E9%83%A8Tomcat/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/19/HttpSession/" class="archive-article-date">
-  	<time datetime="2020-08-19T13:24:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/15/Java%E6%95%B4%E5%9E%8B%E6%95%B0%E7%9B%B8%E9%99%A4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java整型数相除</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/19/HttpSession/">HttpSession</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/19/url-pattern%E7%9A%84%E7%BC%96%E5%86%99%E6%96%B9%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-08-19T13:00:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/19/url-pattern%E7%9A%84%E7%BC%96%E5%86%99%E6%96%B9%E5%BC%8F/">url-pattern的编写方式</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/19/%E8%B7%AF%E5%BE%84%E7%BC%96%E5%86%99%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-08-19T12:34:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/19/%E8%B7%AF%E5%BE%84%E7%BC%96%E5%86%99%E6%80%BB%E7%BB%93/">路径编写总结</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/18/Cookie%E5%AE%9E%E7%8E%B010%E5%A4%A9%E5%86%85%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-08-18T14:48:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/18/Cookie%E5%AE%9E%E7%8E%B010%E5%A4%A9%E5%86%85%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/">Cookie实现10天内免密登录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/18/Cookie/" class="archive-article-date">
-  	<time datetime="2020-08-18T09:07:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/18/Cookie/">Cookie</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/18/%E8%BD%AC%E5%8F%91%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/" class="archive-article-date">
-  	<time datetime="2020-08-18T07:30:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/18/%E8%BD%AC%E5%8F%91%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/">转发和重定向</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/18/Servlet%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-08-18T03:52:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/18/Servlet%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/">Servlet线程安全问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/17/%E7%A8%8B%E5%BA%8F%E4%B8%AD%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-08-17T11:26:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/17/%E7%A8%8B%E5%BA%8F%E4%B8%AD%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/">程序中乱码问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/17/HttpServletRequest%E6%8E%A5%E5%8F%A3%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-08-17T09:43:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/17/HttpServletRequest%E6%8E%A5%E5%8F%A3%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">HttpServletRequest接口中常用方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/08/">&lt; Prev</a><a class="page-number" href="/archives/2020/08/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2020/08/page/3/">3</a><a class="page-number" href="/archives/2020/08/page/4/">4</a><a class="extend next" rel="next" href="/archives/2020/08/page/3/">Next &gt;</a>
-    </nav>
   
 
 
@@ -627,8 +399,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
