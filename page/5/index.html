@@ -78,7 +78,7 @@
 		</nav>
 
 		<nav>
-			总文章数 62
+			总文章数 64
 		</nav>
 		
 		<nav class="header-smart-menu">
@@ -185,6 +185,167 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Cookie实现10天内免密登录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/18/Cookie%E5%AE%9E%E7%8E%B010%E5%A4%A9%E5%86%85%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/">Cookie实现10天内免密登录</a>
+    </h1>
+  
+
+        
+        
+<a href="/2020/08/18/Cookie%E5%AE%9E%E7%8E%B010%E5%A4%A9%E5%86%85%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/" class="archive-article-date">
+  	<time datetime="2020-08-18T14:48:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=53">https://www.bilibili.com/video/BV1vb41187jH?p=53</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--login.html--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>登录页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span> = <span class="string">&quot;keywords&quot;</span> <span class="attr">content</span> = <span class="string">&quot;keyword1, keyword2, keyword3&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span> = <span class="string">&quot;description&quot;</span> <span class="attr">content</span> = <span class="string">&quot;this is my page&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span> = <span class="string">&quot;content-type&quot;</span> <span class="attr">content</span> = <span class="string">&quot;text/html;charset = UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span> = <span class="string">&quot;/webappname/login&quot;</span> <span class="attr">method</span> = <span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">            用户名</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;text&quot;</span> <span class="attr">name</span> = <span class="string">&quot;username&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            密码</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;password&quot;</span> <span class="attr">name</span> = <span class="string">&quot;password&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span> = <span class="string">&quot;tenDayAutoLoginFlag&quot;</span> <span class="attr">value</span> = <span class="string">&quot;ok&quot;</span>&gt;</span>十天内免登录<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;submit&quot;</span> <span class="attr">value</span> = <span class="string">&quot;登录&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/08/18/Cookie%E5%AE%9E%E7%8E%B010%E5%A4%A9%E5%86%85%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/18/Cookie%E5%AE%9E%E7%8E%B010%E5%A4%A9%E5%86%85%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Cookie" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/18/Cookie/">Cookie</a>
+    </h1>
+  
+
+        
+        
+<a href="/2020/08/18/Cookie/" class="archive-article-date">
+  	<time datetime="2020-08-18T09:07:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=49">https://www.bilibili.com/video/BV1vb41187jH?p=49</a></p>
+<ol>
+<li><p>Cookie是什么？Cookie作用？Cookie保存在哪里？</p>
+<ul>
+<li><p>Cookie可以保存会话状态</p>
+</li>
+<li><p>只要Cookie清除，或者Cookie失效，这个会话状态就没有了。</p>
+        
+          <a class="article-more-a" href="/2020/08/18/Cookie/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/18/Cookie/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-转发和重定向" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -816,167 +977,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/08/16/%E4%BF%9D%E8%AF%81%E5%89%8D%E7%AB%AF%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%92%8C%E5%90%8E%E5%8F%B0%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%80%E8%87%B4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTTP协议之Get和Post" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/15/HTTP%E5%8D%8F%E8%AE%AE%E4%B9%8BGet%E5%92%8CPost/">HTTP协议之Get和Post</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/15/HTTP%E5%8D%8F%E8%AE%AE%E4%B9%8BGet%E5%92%8CPost/" class="archive-article-date">
-  	<time datetime="2020-08-15T14:07:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=33">https://www.bilibili.com/video/BV1vb41187jH?p=33</a></p>
-<h1 id="1-HTTP协议"><a href="#1-HTTP协议" class="headerlink" title="1. HTTP协议"></a>1. HTTP协议</h1><h2 id="1-1-什么是HTTP协议"><a href="#1-1-什么是HTTP协议" class="headerlink" title="1.1 什么是HTTP协议"></a>1.1 什么是HTTP协议</h2><ul>
-<li>超文本传输协议</li>
-<li>浏览器和服务器之间的一种通讯协议</li>
-<li>该协议是W3C负责制定的，其实本质上就是数据传送格式提前制定好了。浏览器和服务器都必须按照这种数据格式进行接收和发送。</li>
-</ul>
-        
-          <a class="article-more-a" href="/2020/08/15/HTTP%E5%8D%8F%E8%AE%AE%E4%B9%8BGet%E5%92%8CPost/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/15/HTTP%E5%8D%8F%E8%AE%AE%E4%B9%8BGet%E5%92%8CPost/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-遍历Map的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/14/%E9%81%8D%E5%8E%86Map%E7%9A%84%E6%96%B9%E6%B3%95/">遍历Map的方法</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/14/%E9%81%8D%E5%8E%86Map%E7%9A%84%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-08-14T13:41:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><p>方法1:使用Iterator,，适合<strong>在遍历过程中删除元素</strong>推荐使用Iterator；</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">map.put(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">Iterator&lt;Map.Entry&lt;Integer, Integer&gt;&gt; it = map.entrySet().iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext()) &#123;</span><br><span class="line">            Map.Entry&lt;Integer, Integer&gt; entry = it.next();</span><br><span class="line">            System.out.println(<span class="string">&quot;key = &quot;</span> + entry.getKey() + <span class="string">&quot;, value = &quot;</span> + entry.getValue());</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/08/14/%E9%81%8D%E5%8E%86Map%E7%9A%84%E6%96%B9%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JAVA基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/14/%E9%81%8D%E5%8E%86Map%E7%9A%84%E6%96%B9%E6%B3%95/">展开全文 >></a>
         </p>
       
 
