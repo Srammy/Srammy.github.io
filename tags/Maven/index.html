@@ -6,25 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>SpringBoot整合Druid | Srammy&#39;s Blog</title>
+  <title>Tag: Maven | Srammy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SpringBoot提供的数据源在org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration中可以看到这些数据源  org.apache.commons.dbcp2.BasicDataSource com.zaxxer.hikari.HikariDataSource org.apache.tomcat.jdbc.pool.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot整合Druid">
-<meta property="og:url" content="http://yoursite.com/2020/09/12/SpringBoot%E6%95%B4%E5%90%88Druid/index.html">
+  <meta name="description" content="个人博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Srammy&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/tags/Maven/index.html">
 <meta property="og:site_name" content="Srammy&#39;s Blog">
-<meta property="og:description" content="SpringBoot提供的数据源在org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration中可以看到这些数据源  org.apache.commons.dbcp2.BasicDataSource com.zaxxer.hikari.HikariDataSource org.apache.tomcat.jdbc.pool.">
+<meta property="og:description" content="个人博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/druid/%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/druid/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E5%85%A5.PNG">
-<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/druid/%E8%BE%93%E5%85%A5.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/druid/%E7%95%8C%E9%9D%A2.jpg">
-<meta property="article:published_time" content="2020-09-12T13:10:42.000Z">
-<meta property="article:modified_time" content="2020-09-12T13:58:58.903Z">
 <meta property="article:author" content="Srammy">
-<meta property="article:tag" content="Spring">
+<meta property="article:tag" content="学习记录">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/druid/%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Srammy&#39;s Blog" type="application/atom+xml">
   
@@ -203,208 +196,61 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-SpringBoot整合Druid" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      SpringBoot整合Druid
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2020/10/13/Maven%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="archive-article-date">
+  	<time datetime="2020-10-13T04:29:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-13</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/10/13/Maven%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">Maven基础知识</a>
     </h1>
   
 
-        
-        
-	<!-- 不蒜子统计 -->
-	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-	</span>
-
-<a href="/2020/09/12/SpringBoot%E6%95%B4%E5%90%88Druid/" class="archive-article-date">
-  	<time datetime="2020-09-12T13:10:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="SpringBoot提供的数据源"><a href="#SpringBoot提供的数据源" class="headerlink" title="SpringBoot提供的数据源"></a>SpringBoot提供的数据源</h1><p>在<code>org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration</code>中可以看到这些数据源</p>
-<ul>
-<li><code>org.apache.commons.dbcp2.BasicDataSource</code></li>
-<li><code>com.zaxxer.hikari.HikariDataSource</code></li>
-<li><code>org.apache.tomcat.jdbc.pool.DataSource</code></li>
-</ul>
-<a id="more"></a>
-
-<p>SpringBoot2.0默认是用com.zaxxer.hikari.HikariDataSource作为数据源。</p>
-<p>2.0以下默认采用的是org.apache.tomcat.jdbc.pool.DataSource作为数据源。</p>
-<h1 id="Druid数据源"><a href="#Druid数据源" class="headerlink" title="Druid数据源"></a>Druid数据源</h1><p>官网：<a target="_blank" rel="noopener" href="https://druid.apache.org/">https://druid.apache.org/</a></p>
-<ol>
-<li>可以监控数据库访问性能，Druid内置提供了一个功能强大的StatFilter插件，能够详细统计SQL的执行性能，这对于线上分析数据库访问性能有帮助。</li>
-<li>替换DBCP和C3P0，Druid提供了一个高效、功能强大、可扩展性好的数据库连接池。</li>
-<li>数据库密码加密。直接把数据库密码写在配置文件中，这是不好的行为，容易导致安全问题。DruidDriver和DruidDataSource都支持PasswordCallback。</li>
-<li>SQL执行日志，Druid提供了不同的LogFilter，能够支持Common-Logging、Log4j和JdkLog，你可以按需要选择相应的LogFilter，监控你应用的数据库访问情况。</li>
-<li>扩展JDBC，如果你要对JDBC层有编程的需求，可以通过Druid提供的Filter-Chain机制，很方便编写JDBC层的扩展插件。</li>
-</ol>
-<h1 id="SpringBoot整合Druid"><a href="#SpringBoot整合Druid" class="headerlink" title="SpringBoot整合Druid"></a>SpringBoot整合Druid</h1><p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/druid/%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84.jpg"></p>
-<h2 id="1-配置文件"><a href="#1-配置文件" class="headerlink" title="1. 配置文件"></a>1. 配置文件</h2><p>这里配置了不加密</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">server.port</span> = <span class="string">8089</span></span><br><span class="line"><span class="comment"># ############## MYSQL配置 ##################</span></span><br><span class="line"><span class="meta">spring.datasource.url</span>=<span class="string">jdbc:mysql://localhost:3306/springboot_mybatis?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=GMT%2B8&amp;useSSL=false</span></span><br><span class="line"><span class="meta">spring.datasource.username</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">spring.datasource.password</span>=<span class="string">123456</span></span><br><span class="line"><span class="meta">spring.datasource.driver-class-name</span>=<span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="comment">################### Mybatis ####################</span></span><br><span class="line"><span class="meta">mybatis.mapper-locations</span>=<span class="string">classpath:mapper/*.xml</span></span><br><span class="line"><span class="comment">################ Druid ########################</span></span><br><span class="line"><span class="meta">spring.datasource.type</span>=<span class="string">com.alibaba.druid.pool.DruidDataSource</span></span><br><span class="line"><span class="comment"># 初始化大小，最小，最大</span></span><br><span class="line"><span class="meta">spring.datasource.initialSize</span>=<span class="string">5</span></span><br><span class="line"><span class="meta">spring.datasource.minIdle</span>=<span class="string">5</span></span><br><span class="line"><span class="meta">spring.datasource.maxActive</span>=<span class="string">20</span></span><br><span class="line"><span class="comment"># 配置获取连接等待超时的时间</span></span><br><span class="line"><span class="meta">spring.datasource.maxWait</span>=<span class="string">60000</span></span><br><span class="line"><span class="comment"># 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒</span></span><br><span class="line"><span class="meta">spring.datasource.timeBetweenEvictionRunsMillis</span>=<span class="string">60000</span></span><br><span class="line"><span class="comment"># 配置一个连接在池中最小生存的时间，单位是毫秒</span></span><br><span class="line"><span class="meta">spring.datasource.minEvictableIdleTimeMillis</span>=<span class="string">300000</span></span><br><span class="line"><span class="comment"># 校验SQL，Oracle配置 spring.datasource.validationQuery=SELECT 1 FROM DUAL，如果不配validationQuery项，则下面三项配置无用</span></span><br><span class="line"><span class="meta">spring.datasource.validationQuery</span>=<span class="string">SELECT &#x27;x&#x27;</span></span><br><span class="line"><span class="meta">spring.datasource.testWhileIdle</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">spring.datasource.testOnBorrow</span>=<span class="string">false</span></span><br><span class="line"><span class="meta">spring.datasource.testOnReturn</span>=<span class="string">false</span></span><br><span class="line"><span class="comment"># 打开PSCache，并且指定每个连接上PSCache的大小</span></span><br><span class="line"><span class="meta">spring.datasource.poolPreparedStatements</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">spring.datasource.maxPoolPreparedStatementPerConnectionSize</span>=<span class="string">20</span></span><br><span class="line"><span class="comment"># 配置监控统计拦截的filters，去掉后监控界面sql无法统计，&#x27;wall&#x27;用于防火墙,注意log4j版本2</span></span><br><span class="line"><span class="comment"># Druid提供了不同的LogFilter，能够支持Common-Logging、Log4j和JdkLog，你可以按需要选择相应的LogFilter，监控你应用的数据库访问情况。</span></span><br><span class="line"><span class="meta">spring.datasource.filters</span>=<span class="string">stat,wall,log4j2,config</span></span><br><span class="line"><span class="comment"># 通过connectProperties属性来打开mergeSql功能；慢SQL记录；不加密</span></span><br><span class="line"><span class="meta">spring.datasource.connectionProperties</span>=<span class="string">druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000;config.decrypt=false</span></span><br><span class="line"><span class="comment"># 合并多个DruidDataSource的监控数据</span></span><br><span class="line"><span class="meta">spring.datasource.useGlobalDataSourceStat</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-Druid配置类"><a href="#2-Druid配置类" class="headerlink" title="2. Druid配置类"></a>2. Druid配置类</h2><p>新建一个config包，在下面编写<code>DataSourceConfig.java</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DataSourceConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.url&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.username&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.password&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.driver-class-name&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String driverClassName;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.initialSize&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> initialSize;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.minIdle&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> minIdle;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.maxActive&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> maxActive;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.maxWait&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> maxWait;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.timeBetweenEvictionRunsMillis&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> timeBetweenEvictionRunsMillis;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.minEvictableIdleTimeMillis&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> minEvictableIdleTimeMillis;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.validationQuery&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String validationQuery;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.testWhileIdle&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> testWhileIdle;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.testOnBorrow&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> testOnBorrow;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.testOnReturn&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> testOnReturn;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.poolPreparedStatements&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> poolPreparedStatements;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.maxPoolPreparedStatementPerConnectionSize&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> maxPoolPreparedStatementPerConnectionSize;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.filters&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String filters;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.connectionProperties&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String connectionProperties;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@Primary</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> DataSource <span class="title">dataSource</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        DruidDataSource datasource = <span class="keyword">new</span> DruidDataSource();</span><br><span class="line"></span><br><span class="line">        datasource.setUrl(url);</span><br><span class="line">        datasource.setUsername(username);</span><br><span class="line">        datasource.setPassword(password);   <span class="comment">//这里可以做加密处理</span></span><br><span class="line">        datasource.setDriverClassName(driverClassName);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//configuration</span></span><br><span class="line">        datasource.setInitialSize(initialSize);</span><br><span class="line">        datasource.setMinIdle(minIdle);</span><br><span class="line">        datasource.setMaxActive(maxActive);</span><br><span class="line">        datasource.setMaxWait(maxWait);</span><br><span class="line">        datasource.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRunsMillis);</span><br><span class="line">        datasource.setMinEvictableIdleTimeMillis(minEvictableIdleTimeMillis);</span><br><span class="line">        datasource.setValidationQuery(validationQuery);</span><br><span class="line">        datasource.setTestWhileIdle(testWhileIdle);</span><br><span class="line">        datasource.setTestOnBorrow(testOnBorrow);</span><br><span class="line">        datasource.setTestOnReturn(testOnReturn);</span><br><span class="line">        datasource.setPoolPreparedStatements(poolPreparedStatements);</span><br><span class="line">        datasource.setMaxPoolPreparedStatementPerConnectionSize(maxPoolPreparedStatementPerConnectionSize);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            datasource.setFilters(filters);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//System.out.println(connectionProperties);</span></span><br><span class="line">        <span class="comment">//System.out.println(connectionProperties+pubKey);</span></span><br><span class="line">        datasource.setConnectionProperties(connectionProperties);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> datasource;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletRegistrationBean <span class="title">statViewServlet</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ServletRegistrationBean servletRegistrationBean = <span class="keyword">new</span> ServletRegistrationBean(<span class="keyword">new</span> StatViewServlet(),<span class="string">&quot;/druid/*&quot;</span>);</span><br><span class="line">        servletRegistrationBean.addInitParameter(<span class="string">&quot;allow&quot;</span>,<span class="string">&quot;127.0.0.1&quot;</span>);  <span class="comment">//设置ip白名单</span></span><br><span class="line">        servletRegistrationBean.addInitParameter(<span class="string">&quot;deny&quot;</span>,<span class="string">&quot;10.135.128.132&quot;</span>);<span class="comment">//设置ip黑名单，优先级高于白名单</span></span><br><span class="line">        <span class="comment">//设置控制台管理用户</span></span><br><span class="line">        servletRegistrationBean.addInitParameter(<span class="string">&quot;loginUsername&quot;</span>,<span class="string">&quot;srammy&quot;</span>);</span><br><span class="line">        servletRegistrationBean.addInitParameter(<span class="string">&quot;loginPassword&quot;</span>,<span class="string">&quot;srammy123&quot;</span>);</span><br><span class="line">        <span class="comment">//是否可以重置数据</span></span><br><span class="line">        servletRegistrationBean.addInitParameter(<span class="string">&quot;resetEnable&quot;</span>,<span class="string">&quot;false&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> servletRegistrationBean;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> FilterRegistrationBean <span class="title">statFilter</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//创建过滤器</span></span><br><span class="line">        FilterRegistrationBean filterRegistrationBean = <span class="keyword">new</span> FilterRegistrationBean(<span class="keyword">new</span> WebStatFilter());</span><br><span class="line">        <span class="comment">//设置过滤器过滤路径</span></span><br><span class="line">        filterRegistrationBean.addUrlPatterns(<span class="string">&quot;/*&quot;</span>);</span><br><span class="line">        <span class="comment">//忽略过滤的形式</span></span><br><span class="line">        filterRegistrationBean.addInitParameter(<span class="string">&quot;exclusions&quot;</span>,<span class="string">&quot;*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> filterRegistrationBean;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-实体类"><a href="#3-实体类" class="headerlink" title="3. 实体类"></a>3. 实体类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> userId;</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getUserId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> userId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUserId</span><span class="params">(<span class="keyword">int</span> userId)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.userId = userId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUsername</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUsername</span><span class="params">(String username)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.username = username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPassword</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPassword</span><span class="params">(String password)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-controller"><a href="#4-controller" class="headerlink" title="4. controller"></a>4. controller</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(value = &quot;/all&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">getAllUsers</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> userService.getAllUsers();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(value = &quot;/finduser/&#123;id&#125;&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">findUserById</span><span class="params">(<span class="meta">@PathVariable(name = &quot;id&quot; )</span> Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> userService.findUserById(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-service"><a href="#5-service" class="headerlink" title="5. service"></a>5. service</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserDao userDao;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">getAllUsers</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> userDao.getAllUsers();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">findUserById</span><span class="params">(<span class="keyword">int</span> userId)</span> </span>&#123;</span><br><span class="line">        User user = userDao.findUserById(userId);</span><br><span class="line">        <span class="keyword">return</span> user;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-dao"><a href="#6-dao" class="headerlink" title="6. dao"></a>6. dao</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserDao</span> </span>&#123;</span><br><span class="line">    <span class="function">List&lt;User&gt; <span class="title">getAllUsers</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">User <span class="title">findUserById</span><span class="params">(<span class="meta">@Param(&quot;userId&quot;)</span> Integer userId)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="7-mapper-xml"><a href="#7-mapper-xml" class="headerlink" title="7. mapper.xml"></a>7. mapper.xml</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">mapper</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span> <span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;demo.srammy.springbootdruid.dao.UserDao&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">&quot;BaseResultMap&quot;</span>  <span class="attr">type</span>=<span class="string">&quot;demo.srammy.springbootdruid.model.User&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">&quot;id&quot;</span> <span class="attr">jdbcType</span>=<span class="string">&quot;INTEGER&quot;</span> <span class="attr">property</span>=<span class="string">&quot;userId&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;user_name&quot;</span> <span class="attr">jdbcType</span>=<span class="string">&quot;VARCHAR&quot;</span> <span class="attr">property</span>=<span class="string">&quot;username&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;password&quot;</span> <span class="attr">jdbcType</span>=<span class="string">&quot;VARCHAR&quot;</span> <span class="attr">property</span>=<span class="string">&quot;password&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getAllUsers&quot;</span> <span class="attr">resultMap</span>=<span class="string">&quot;BaseResultMap&quot;</span>&gt;</span></span><br><span class="line">          select id,user_name,password</span><br><span class="line">           from t_user</span><br><span class="line">          order by id desc</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;findUserById&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;int&quot;</span> <span class="attr">resultMap</span>=<span class="string">&quot;BaseResultMap&quot;</span>&gt;</span></span><br><span class="line">         select id,user_name,password from t_user</span><br><span class="line">         where id = #&#123;userId&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="8-启动类"><a href="#8-启动类" class="headerlink" title="8. 启动类"></a>8. 启动类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@MapperScan(&quot;demo.srammy.springbootdruid.dao&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringbootdruidApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(SpringbootdruidApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="9-运行程序"><a href="#9-运行程序" class="headerlink" title="9. 运行程序"></a>9. 运行程序</h2><p>在浏览器地址栏中输入<code>localhost:8089\druid</code>，进入控制台登录界面</p>
-<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/druid/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E5%85%A5.PNG"></p>
-<p>输入在配置代码中配置的用户名和密码</p>
-<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/druid/%E8%BE%93%E5%85%A5.jpg"></p>
-<p>进入控制台界面</p>
-<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/druid/%E7%95%8C%E9%9D%A2.jpg"></p>
-<p>参考：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ming-blogs/p/10288895.html">https://www.cnblogs.com/ming-blogs/p/10288895.html</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.xn2001.com/archives/395.html">https://www.xn2001.com/archives/395.html</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Maven</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/12/SpringBoot%E6%95%B4%E5%90%88Druid/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/09/13/SpringBoot%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8Maven%E6%89%93%E6%88%90JAR%E5%8C%85/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          SpringBoot项目使用Maven打成JAR包
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/09/12/SpringBoot%E6%95%B4%E5%90%88MyBatisGenerator/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SpringBoot整合MyBatisGenerator</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -438,9 +284,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
