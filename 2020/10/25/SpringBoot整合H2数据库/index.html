@@ -6,18 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Srammy&#39;s Blog</title>
+  <title>SpringBoot整合H2数据库 | Srammy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Srammy&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="1. 引入依赖">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot整合H2数据库">
+<meta property="og:url" content="http://yoursite.com/2020/10/25/SpringBoot%E6%95%B4%E5%90%88H2%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
 <meta property="og:site_name" content="Srammy&#39;s Blog">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="1. 引入依赖">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/h2/H2%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/h2/h2%E8%B7%AF%E5%BE%84.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/h2/%E5%BB%BA%E8%A1%A8%E9%80%89%E7%BA%BF.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/h2/%E5%BB%BA%E8%A1%A8.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/h2/%E8%AE%BF%E9%97%AE1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/h2/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AEh2%E6%95%B0%E6%8D%AE%E5%BA%93.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/h2/%E8%BF%9B%E5%85%A5.jpg">
+<meta property="article:published_time" content="2020-10-25T02:50:01.000Z">
+<meta property="article:modified_time" content="2020-10-25T03:32:20.501Z">
 <meta property="article:author" content="Srammy">
-<meta property="article:tag" content="学习记录">
+<meta property="article:tag" content="Spring">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/h2/H2%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Srammy&#39;s Blog" type="application/atom+xml">
   
@@ -196,265 +206,61 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-统计代码执行用时" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-SpringBoot整合H2数据库" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/11/%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E7%94%A8%E6%97%B6/">统计代码执行用时</a>
+    <h1 class="article-title" itemprop="name">
+      SpringBoot整合H2数据库
     </h1>
   
 
         
         
-<a href="/2020/10/11/%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E7%94%A8%E6%97%B6/" class="archive-article-date">
-  	<time datetime="2020-10-11T02:29:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-11</time>
+	<!-- 不蒜子统计 -->
+	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+<a href="/2020/10/25/SpringBoot%E6%95%B4%E5%90%88H2%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
+  	<time datetime="2020-10-25T02:50:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-System-currentTimeMillis"><a href="#1-System-currentTimeMillis" class="headerlink" title="1. System.currentTimeMillis()"></a>1. System.currentTimeMillis()</h1><p>统计用时以毫秒为单位</p>
-        
-          <a class="article-more-a" href="/2020/10/11/%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E7%94%A8%E6%97%B6/#more">more >></a>
-        
-      
+        <h1 id="1-引入依赖"><a href="#1-引入依赖" class="headerlink" title="1. 引入依赖"></a>1. 引入依赖</h1><a id="more"></a>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JAVA基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--h2的jar包里已经包含了org.h2.driver驱动类--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.h2database<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>h2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.199<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-      
+<h1 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2. 配置文件"></a>2. 配置文件</h1><p>配置连接信息和h2数据库</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">spring.datasource.url</span>=<span class="string">jdbc:h2:~/usersystem</span></span><br><span class="line"><span class="meta">spring.datasource.username</span>=<span class="string">sa</span></span><br><span class="line"><span class="meta">spring.datasource.password</span>=<span class="string">123</span></span><br><span class="line"><span class="meta">spring.datasource.driver-class-name</span>=<span class="string">org.h2.Driver</span></span><br><span class="line"><span class="comment">############ H2 ####################</span></span><br><span class="line"><span class="comment">##数据初始化设置</span></span><br><span class="line"><span class="comment">#进行该配置后，每次启动程序，程序都会运行resources/db/schema.sql文件，对数据库的结构进行操作。</span></span><br><span class="line"><span class="comment">#spring.datasource.schema=classpath:db/schema.sql</span></span><br><span class="line"><span class="comment">#进行该配置后，每次启动程序，程序都会运行resources/db/data.sql文件，对数据库的数据操作。</span></span><br><span class="line"><span class="comment">#spring.datasource.data=classpath:db/data.sql</span></span><br><span class="line"><span class="comment">##h2 web console设置</span></span><br><span class="line"><span class="comment">#表明使用的数据库平台是h2</span></span><br><span class="line"><span class="meta">spring.datasource.platform</span>=<span class="string">h2</span></span><br><span class="line"><span class="comment">#spring.h2.console.settings.web-allow-others=true  # 进行该配置后，h2 web consloe就可以在远程访问了。否则只能在本机访问。</span></span><br><span class="line"><span class="comment">#进行该配置，你就可以通过YOUR_URL/h2访问h2 web consloe。YOUR_URL是你程序的访问URl。</span></span><br><span class="line"><span class="meta">spring.h2.console.path</span>=<span class="string">/h2</span></span><br><span class="line"><span class="comment">#spring.h2.console.enabled=true  #进行该配置，程序开启时就会启动h2 web consloe。当然这是默认的，如果你不想在启动程序时启动h2 web consloe，那么就设置为false。</span></span><br><span class="line"><span class="meta">spring.h2.console.enabled</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/11/%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E7%94%A8%E6%97%B6/">展开全文 >></a>
-        </p>
-      
+<h1 id="3-IDEA中连接H2数据库"><a href="#3-IDEA中连接H2数据库" class="headerlink" title="3. IDEA中连接H2数据库"></a>3. IDEA中连接H2数据库</h1><ul>
+<li>Connection type配置为embedded</li>
+<li>URL配置为用户目录下的usersystem数据库</li>
+</ul>
+<p>测试连接，这里可能需要下载驱动。</p>
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/h2/H2%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF.jpg"></p>
+<p>连接成功后，在用户目录下出现了h2数据库文件</p>
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/h2/h2%E8%B7%AF%E5%BE%84.png"></p>
+<h1 id="4-数据库中建表"><a href="#4-数据库中建表" class="headerlink" title="4. 数据库中建表"></a>4. 数据库中建表</h1><p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/h2/%E5%BB%BA%E8%A1%A8%E9%80%89%E7%BA%BF.jpg"></p>
+<ul>
+<li>输入表名</li>
+<li>点击右侧“+”，新增数据库字段</li>
+<li>点击”Execute”，执行SQL语句</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/h2/%E5%BB%BA%E8%A1%A8.jpg"></p>
+<p>成功建表后，可以向表中插入一些记录</p>
+<h1 id="5-启动程序，访问"><a href="#5-启动程序，访问" class="headerlink" title="5. 启动程序，访问"></a>5. 启动程序，访问</h1><p>嵌入式的H2只能有一个数据库连接，所以启动程序进行访问时要断开IDEA中的H2连接。</p>
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/h2/%E8%AE%BF%E9%97%AE1.jpg"></p>
+<h1 id="6-浏览器页面访问H2数据库"><a href="#6-浏览器页面访问H2数据库" class="headerlink" title="6. 浏览器页面访问H2数据库"></a>6. 浏览器页面访问H2数据库</h1><p>浏览器地址栏输入<code>http://localhost:8089/h2</code></p>
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/h2/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AEh2%E6%95%B0%E6%8D%AE%E5%BA%93.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/Srammy/srammyPic/master/img/h2/%E8%BF%9B%E5%85%A5.jpg"></p>
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Arrays.sort()对数组原地排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/08/Arrays.sort()%E5%AF%B9%E6%95%B0%E7%BB%84%E5%8E%9F%E5%9C%B0%E6%8E%92%E5%BA%8F/">Arrays.sort()对数组原地排序</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/10/08/Arrays.sort()%E5%AF%B9%E6%95%B0%E7%BB%84%E5%8E%9F%E5%9C%B0%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2020-10-08T07:03:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Java的util包下Arrays类中的sort方法对数组原地升序排序，</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] nums = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">100</span>, <span class="number">60</span> ,<span class="number">88</span> , <span class="number">33</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">20</span>, <span class="number">90</span>, <span class="number">78</span>&#125;;</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i : nums) &#123;</span><br><span class="line">        System.out.println(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JAVA基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/08/Arrays.sort()%E5%AF%B9%E6%95%B0%E7%BB%84%E5%8E%9F%E5%9C%B0%E6%8E%92%E5%BA%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-链表反转" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/08/%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/">链表反转</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/10/08/%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/" class="archive-article-date">
-  	<time datetime="2020-10-08T06:59:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-递归"><a href="#1-递归" class="headerlink" title="1. 递归"></a>1. 递归</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ListNode node = reverseList(head.next);</span><br><span class="line">    head.next.next = head;</span><br><span class="line">    head.next = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-循环"><a href="#2-循环" class="headerlink" title="2. 循环"></a>2. 循环</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    ListNode cur = head;</span><br><span class="line">    ListNode temp = <span class="keyword">null</span>;</span><br><span class="line">    ListNode pre = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">        temp = cur.next;</span><br><span class="line">        cur.next = pre;</span><br><span class="line">        pre = cur;</span><br><span class="line">        cur = temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构和算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/08/%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SpringBoot项目过滤器filter" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/04/SpringBoot%E9%A1%B9%E7%9B%AE%E8%BF%87%E6%BB%A4%E5%99%A8filter/">SpringBoot项目过滤器filter</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/10/04/SpringBoot%E9%A1%B9%E7%9B%AE%E8%BF%87%E6%BB%A4%E5%99%A8filter/" class="archive-article-date">
-  	<time datetime="2020-10-04T14:14:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>​        Filter是在Servlet 2.3之后增加的新功能，当需要限制用户访问某些资源或者在处理请求时提前处理某些资源的时候，就可以使用过滤器完成。Filter 过滤器主要是用来过滤用户请求的，它允许我们对用户请求进行前置处理和后置处理，比如实现 URL 级别的权限控制、过滤非法请求等等。</p>
-        
-          <a class="article-more-a" href="/2020/10/04/SpringBoot%E9%A1%B9%E7%9B%AE%E8%BF%87%E6%BB%A4%E5%99%A8filter/#more">more >></a>
-        
       
 
       
@@ -476,16 +282,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/04/SpringBoot%E9%A1%B9%E7%9B%AE%E8%BF%87%E6%BB%A4%E5%99%A8filter/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/10/25/SpringBoot%E6%95%B4%E5%90%88H2%E6%95%B0%E6%8D%AE%E5%BA%93/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/10/17/SpringBoot%E6%95%B4%E5%90%88log4j2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpringBoot整合log4j2</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -505,474 +370,14 @@
 
 
 
-
-  
-    <article id="post-SpringBoot项目热部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/04/SpringBoot%E9%A1%B9%E7%9B%AE%E7%83%AD%E9%83%A8%E7%BD%B2/">SpringBoot项目热部署</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/10/04/SpringBoot%E9%A1%B9%E7%9B%AE%E7%83%AD%E9%83%A8%E7%BD%B2/" class="archive-article-date">
-  	<time datetime="2020-10-04T12:55:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用devtools进行热部署之后，可以再程序运行时修改代码，修改代码后，不需要再次重新启动了。</p>
-        
-          <a class="article-more-a" href="/2020/10/04/SpringBoot%E9%A1%B9%E7%9B%AE%E7%83%AD%E9%83%A8%E7%BD%B2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/04/SpringBoot%E9%A1%B9%E7%9B%AE%E7%83%AD%E9%83%A8%E7%BD%B2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SpringBoot整合JPA" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/04/SpringBoot%E6%95%B4%E5%90%88JPA/">SpringBoot整合JPA</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/10/04/SpringBoot%E6%95%B4%E5%90%88JPA/" class="archive-article-date">
-  	<time datetime="2020-10-04T07:58:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-依赖"><a href="#1-依赖" class="headerlink" title="1. 依赖"></a>1. 依赖</h1>
-        
-          <a class="article-more-a" href="/2020/10/04/SpringBoot%E6%95%B4%E5%90%88JPA/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/04/SpringBoot%E6%95%B4%E5%90%88JPA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-@Primary和@Qualifier" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/04/@Primary%E5%92%8C@Qualifier/">@Primary和@Qualifier</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/10/04/@Primary%E5%92%8C@Qualifier/" class="archive-article-date">
-  	<time datetime="2020-10-04T05:52:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-在Service层，有两个bean实例"><a href="#1-在Service层，有两个bean实例" class="headerlink" title="1. 在Service层，有两个bean实例"></a>1. 在Service层，有两个bean实例</h1>
-        
-          <a class="article-more-a" href="/2020/10/04/@Primary%E5%92%8C@Qualifier/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/04/@Primary%E5%92%8C@Qualifier/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-IDEA中在服务器上部署项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/25/IDEA%E4%B8%AD%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/">IDEA中在服务器上部署项目</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/09/25/IDEA%E4%B8%AD%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/" class="archive-article-date">
-  	<time datetime="2020-09-25T13:36:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-选项位置"><a href="#1-选项位置" class="headerlink" title="1. 选项位置"></a>1. 选项位置</h1>
-        
-          <a class="article-more-a" href="/2020/09/25/IDEA%E4%B8%AD%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/25/IDEA%E4%B8%AD%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-IDEA登录远程服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/25/IDEA%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/">IDEA登录远程服务器</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/09/25/IDEA%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2020-09-25T13:25:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Start-SSH-Session登录"><a href="#Start-SSH-Session登录" class="headerlink" title="Start SSH Session登录"></a>Start SSH Session登录</h1><h2 id="1-选项位置"><a href="#1-选项位置" class="headerlink" title="1. 选项位置"></a>1. 选项位置</h2>
-        
-          <a class="article-more-a" href="/2020/09/25/IDEA%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/25/IDEA%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-IDEA中的HttpClient" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/25/IDEA%E4%B8%AD%E7%9A%84HttpClient/">IDEA中的HttpClient</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/09/25/IDEA%E4%B8%AD%E7%9A%84HttpClient/" class="archive-article-date">
-  	<time datetime="2020-09-25T12:52:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-打开HTTPClient"><a href="#1-打开HTTPClient" class="headerlink" title="1. 打开HTTPClient"></a>1. 打开HTTPClient</h1><p>点击Tools-&gt;HTTP Client-&gt;Test RESTful  Web Service</p>
-        
-          <a class="article-more-a" href="/2020/09/25/IDEA%E4%B8%AD%E7%9A%84HttpClient/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/25/IDEA%E4%B8%AD%E7%9A%84HttpClient/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&lt; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">Next &gt;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -1006,8 +411,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

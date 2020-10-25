@@ -82,7 +82,7 @@
 		</nav>
 
 		<nav>
-			总文章数 72
+			总文章数 73
 		</nav>
 		
 		<nav class="header-smart-menu">
@@ -198,6 +198,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-SpringBoot整合H2数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/25/SpringBoot%E6%95%B4%E5%90%88H2%E6%95%B0%E6%8D%AE%E5%BA%93/">SpringBoot整合H2数据库</a>
+    </h1>
+  
+
+        
+        
+<a href="/2020/10/25/SpringBoot%E6%95%B4%E5%90%88H2%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
+  	<time datetime="2020-10-25T02:50:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-引入依赖"><a href="#1-引入依赖" class="headerlink" title="1. 引入依赖"></a>1. 引入依赖</h1>
+        
+          <a class="article-more-a" href="/2020/10/25/SpringBoot%E6%95%B4%E5%90%88H2%E6%95%B0%E6%8D%AE%E5%BA%93/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/25/SpringBoot%E6%95%B4%E5%90%88H2%E6%95%B0%E6%8D%AE%E5%BA%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-SpringBoot整合log4j2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -219,21 +296,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-引入依赖"><a href="#1-引入依赖" class="headerlink" title="1. 引入依赖"></a>1. 引入依赖</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-log4j2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="2-log4j2-xml日志配置文件"><a href="#2-log4j2-xml日志配置文件" class="headerlink" title="2. log4j2.xml日志配置文件"></a>2. log4j2.xml日志配置文件</h1><p>该日志配置文件放在根路径下，与pom.xml同级</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="comment">&lt;!--日志级别以及优先级排序: OFF &gt; FATAL &gt; ERROR &gt; WARN &gt; INFO &gt; DEBUG &gt; TRACE &gt; ALL --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- status log4j2内部日志级别 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span> <span class="attr">status</span>=<span class="string">&quot;INFO&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 全局参数 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Property</span> <span class="attr">name</span>=<span class="string">&quot;displayName&quot;</span>&gt;</span>UserSystem<span class="tag">&lt;/<span class="name">Property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Property</span> <span class="attr">name</span>=<span class="string">&quot;PATTERN&quot;</span>&gt;</span>%clr&#123;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125;&#125;&#123;faint&#125; %clr&#123;%5p&#125; %clr&#123;$&#123;sys:PID&#125;&#125;&#123;magenta&#125; %clr&#123;---&#125;&#123;faint&#125; %clr&#123;[%15.15t]&#125;&#123;faint&#125; %clr&#123;%-40.40c&#123;1.&#125;&#125;&#123;cyan&#125; %clr&#123;:&#125;&#123;faint&#125; %m%n%xwEx<span class="tag">&lt;/<span class="name">Property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Appenders</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Console</span> <span class="attr">name</span>=<span class="string">&quot;console&quot;</span> <span class="attr">target</span>=<span class="string">&quot;SYSTEM_OUT&quot;</span> <span class="attr">follow</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">PatternLayout</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>$&#123;PATTERN&#125;<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">PatternLayout</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">Console</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 文件 每次运行程序会自动清空，由append属性决定 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">File</span> <span class="attr">name</span>=<span class="string">&quot;error&quot;</span> <span class="attr">fileName</span>=<span class="string">&quot;logs/$&#123;displayName&#125;_error.log&quot;</span> <span class="attr">append</span>=<span class="string">&quot;false&quot;</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 指定error 级别的日志 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ThresholdFilter</span> <span class="attr">level</span>=<span class="string">&quot;ERROR&quot;</span> <span class="attr">onMatch</span>=<span class="string">&quot;ACCEPT&quot;</span></span></span><br><span class="line"><span class="tag">                             <span class="attr">onMismatch</span>=<span class="string">&quot;DENY&quot;</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">PatternLayout</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>$&#123;PATTERN&#125;<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">PatternLayout</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">File</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 滚动文件 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">RollingFile</span> <span class="attr">name</span>=<span class="string">&quot;rollingFile&quot;</span> <span class="attr">fileName</span>=<span class="string">&quot;logs/$&#123;displayName&#125;.log&quot;</span></span></span><br><span class="line"><span class="tag">                     <span class="attr">filePattern</span>=<span class="string">&quot;$&#123;displayName&#125;_%d&#123;yyyy-MM-dd&#125;.log&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">PatternLayout</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>$&#123;PATTERN&#125;<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">PatternLayout</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 按大小划分 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">SizeBasedTriggeringPolicy</span> <span class="attr">size</span>=<span class="string">&quot;20 MB&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">RollingFile</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Appenders</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Loggers</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Logger</span> <span class="attr">name</span>=<span class="string">&quot;org.springframework&quot;</span> <span class="attr">level</span>=<span class="string">&quot;WARN&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Logger</span> <span class="attr">name</span>=<span class="string">&quot;demo.srammy.springbootwithlog4j2&quot;</span> <span class="attr">level</span>=<span class="string">&quot;DEBUG&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Root</span> <span class="attr">level</span>=<span class="string">&quot;INFO&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">&quot;console&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">AppenderRef</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">&quot;error&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">AppenderRef</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">&quot;rollingFile&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">AppenderRef</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">Root</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Loggers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="3-配置文件中配置日志配置文件的路径"><a href="#3-配置文件中配置日志配置文件的路径" class="headerlink" title="3. 配置文件中配置日志配置文件的路径"></a>3. 配置文件中配置日志配置文件的路径</h1><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">logging.config</span>=<span class="string">log4j2.xml</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="4-使用日志"><a href="#4-使用日志" class="headerlink" title="4. 使用日志"></a>4. 使用日志</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</span><br><span class="line">    Logger logger = LoggerFactory.getLogger(UserController.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(value = &quot;/all&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">getAllUsers</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        logger.info(<span class="string">&quot;查询所有用户&quot;</span>);</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">1</span>/<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> userService.getAllUsers();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(value = &quot;/finduser/&#123;id&#125;&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">findUserById</span><span class="params">(<span class="meta">@PathVariable(name = &quot;id&quot; )</span> Integer id)</span> </span>&#123;</span><br><span class="line">        logger.info(<span class="string">&quot;根据id查询用户&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> userService.findUserById(id);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/keeya/p/10101547.html">https://www.cnblogs.com/keeya/p/10101547.html</a></li>
-</ul>
-
+        <h1 id="1-引入依赖"><a href="#1-引入依赖" class="headerlink" title="1. 引入依赖"></a>1. 引入依赖</h1>
+        
+          <a class="article-more-a" href="/2020/10/17/SpringBoot%E6%95%B4%E5%90%88log4j2/#more">more >></a>
+        
       
 
       
@@ -878,83 +944,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/10/11/IDEA%E4%B8%AD%E6%99%AE%E9%80%9AJAVA%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96jar%E5%8C%85/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-统计代码执行用时" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/11/%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E7%94%A8%E6%97%B6/">统计代码执行用时</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/10/11/%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E7%94%A8%E6%97%B6/" class="archive-article-date">
-  	<time datetime="2020-10-11T02:29:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-System-currentTimeMillis"><a href="#1-System-currentTimeMillis" class="headerlink" title="1. System.currentTimeMillis()"></a>1. System.currentTimeMillis()</h1><p>统计用时以毫秒为单位</p>
-        
-          <a class="article-more-a" href="/2020/10/11/%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E7%94%A8%E6%97%B6/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JAVA基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/11/%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E7%94%A8%E6%97%B6/">展开全文 >></a>
         </p>
       
 
