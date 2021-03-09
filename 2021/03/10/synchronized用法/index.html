@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Servlet | Srammy&#39;s Blog</title>
+  <title>synchronized用法 | Srammy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Srammy&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/Servlet/page/2/index.html">
+  <meta name="description" content="synchronized(对象)对括号内的对象加锁，任何线程要执行synchronized代码块中的代码，都必须要先拿到该对象的锁，当执行完毕时，该线程释放锁，锁可以被其他线程获取。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="synchronized用法">
+<meta property="og:url" content="http://yoursite.com/2021/03/10/synchronized%E7%94%A8%E6%B3%95/index.html">
 <meta property="og:site_name" content="Srammy&#39;s Blog">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="synchronized(对象)对括号内的对象加锁，任何线程要执行synchronized代码块中的代码，都必须要先拿到该对象的锁，当执行完毕时，该线程释放锁，锁可以被其他线程获取。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-09T16:12:23.000Z">
+<meta property="article:modified_time" content="2021-03-09T16:37:04.966Z">
 <meta property="article:author" content="Srammy">
-<meta property="article:tag" content="学习记录">
+<meta property="article:tag" content="JAVA多线程">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Srammy&#39;s Blog" type="application/atom+xml">
@@ -202,415 +204,177 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-synchronized用法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      synchronized用法
+    </h1>
+  
+
+        
+        
+	<!-- 不蒜子统计 -->
+	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+<a href="/2021/03/10/synchronized%E7%94%A8%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2021-03-09T16:12:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-10</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p><code>synchronized(对象)</code>对括号内的对象加锁，任何线程要执行<code>synchronized</code>代码块中的代码，都必须要先拿到该对象的锁，当执行完毕时，该线程释放锁，锁可以被其他线程获取。</p>
+<a id="more"></a>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">T</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Object lock = <span class="keyword">new</span> Object();    <span class="comment">// 锁对象</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">m</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (lock) &#123; <span class="comment">// 任何线程要执行下面的代码,都必须先拿到lock锁,锁信息记录在堆内存对象中的，不是在栈引用中</span></span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">&quot; count = &quot;</span> + count);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 当上述synchronized代码块执行完毕后,锁就会被释放,然后被其他线程获取</span></span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>synchronized(this)</code></p>
+<p>可以直接在实例方法中使用<code>synchronized(this)</code>，避免每次都要创建一个对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">T</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">m</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123; /</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">&quot; count = &quot;</span> + count);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>synchronized修饰整个方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">T</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">m</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName() + <span class="string">&quot; count = &quot;</span> + count);</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>synchronized</code>关键字加在静态方法上，相当于<code>synchronized(T.class)</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">T</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">m1</span><span class="params">()</span> </span>&#123; <span class="comment">// 等同于 synchronized (T.class) &#123; </span></span><br><span class="line">        System.out.println(Thread.currentThread().getName() + <span class="string">&quot; count = &quot;</span> + count);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// m1()方法与m2()方法等价</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">m2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (T.class) &#123; </span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">&quot; count = &quot;</span> + count);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用实例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> count = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="comment">/*synchronized*/</span> <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        count--;</span><br><span class="line">        System.out.println(Thread.currentThread().getName() + <span class="string">&quot; count = &quot;</span> + count);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Test t = <span class="keyword">new</span> Test();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">new</span> Thread(t).start();    <span class="comment">// 再这里new的所有线程的锁住的是同一个上边的t对象</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Thread-1 count &#x3D; 8</span><br><span class="line">Thread-2 count &#x3D; 7</span><br><span class="line">Thread-0 count &#x3D; 8</span><br><span class="line">Thread-3 count &#x3D; 6</span><br><span class="line">Thread-4 count &#x3D; 5</span><br></pre></td></tr></table></figure>
+
+<p>未使用synchronized时，每个线程在执行count–操作和输出操作之间都可能被其它线程打断。</p>
+<p>使用synchronized后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Thread-0 count &#x3D; 9</span><br><span class="line">Thread-1 count &#x3D; 8</span><br><span class="line">Thread-2 count &#x3D; 7</span><br><span class="line">Thread-3 count &#x3D; 6</span><br><span class="line">Thread-4 count &#x3D; 5</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/17/HttpServletRequest%E6%8E%A5%E5%8F%A3%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-08-17T09:43:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/17/HttpServletRequest%E6%8E%A5%E5%8F%A3%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">HttpServletRequest接口中常用方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JAVA多线程</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/03/10/synchronized%E7%94%A8%E6%B3%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/16/HttpServletRequest%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2020-08-16T12:38:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/09/Runnable%E5%92%8CCallable%E6%8E%A5%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Runnable和Callable接口</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/16/HttpServletRequest%E6%8E%A5%E5%8F%A3/">HttpServletRequest接口</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/16/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-08-16T12:17:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/16/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">模板方法设计模式</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/16/HttpServlet%E5%8E%9F%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-08-16T08:58:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/16/HttpServlet%E5%8E%9F%E7%90%86/">HttpServlet原理</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/16/%E4%BF%9D%E8%AF%81%E5%89%8D%E7%AB%AF%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%92%8C%E5%90%8E%E5%8F%B0%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%80%E8%87%B4/" class="archive-article-date">
-  	<time datetime="2020-08-16T08:05:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/16/%E4%BF%9D%E8%AF%81%E5%89%8D%E7%AB%AF%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%92%8C%E5%90%8E%E5%8F%B0%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%80%E8%87%B4/">保证前端请求方式和后台处理方式一致</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/15/HTTP%E5%8D%8F%E8%AE%AE%E4%B9%8BGet%E5%92%8CPost/" class="archive-article-date">
-  	<time datetime="2020-08-15T14:07:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/15/HTTP%E5%8D%8F%E8%AE%AE%E4%B9%8BGet%E5%92%8CPost/">HTTP协议之Get和Post</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/14/GenericServlet/" class="archive-article-date">
-  	<time datetime="2020-08-14T11:26:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/14/GenericServlet/">GenericServlet</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/14/http%E7%8A%B6%E6%80%81%E7%A0%81404500/" class="archive-article-date">
-  	<time datetime="2020-08-14T11:08:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/14/http%E7%8A%B6%E6%80%81%E7%A0%81404500/">http状态码404500</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/14/%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-08-14T10:45:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/14/%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2%E9%85%8D%E7%BD%AE/">欢迎界面配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/14/ServletContext%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2020-08-14T08:33:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/14/ServletContext%E6%8E%A5%E5%8F%A3/">ServletContext接口</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/tags/Servlet/">&lt; Prev</a><a class="page-number" href="/tags/Servlet/">1</a><span class="page-number current">2</span><a class="page-number" href="/tags/Servlet/page/3/">3</a><a class="extend next" rel="next" href="/tags/Servlet/page/3/">Next &gt;</a>
-    </nav>
   
 
 
@@ -645,9 +409,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
