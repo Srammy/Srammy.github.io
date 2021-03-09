@@ -66,6 +66,8 @@
 	        
 				<li><a href="/tags/JAVA%E5%9F%BA%E7%A1%80">JAVABasic</a></li>
 	        
+				<li><a href="/tags/JAVA%E5%A4%9A%E7%BA%BF%E7%A8%8B">JAVA多线程</a></li>
+	        
 				<li><a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F">分布式</a></li>
 	        
 				<li><a href="/tags/Linux">Linux</a></li>
@@ -82,7 +84,7 @@
 		</nav>
 
 		<nav>
-			总文章数 85
+			总文章数 87
 		</nav>
 		
 		<nav class="header-smart-menu">
@@ -147,6 +149,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -161,27 +165,29 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 9.090909090909092%"><a href="/">主页</a></li>
+					<li style="width: 8.333333333333334%"><a href="/">主页</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/archives">归档</a></li>
+					<li style="width: 8.333333333333334%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/Servlet">Servlet</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/Servlet">Servlet</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/Git">Git</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/Git">Git</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/JAVA%E5%9F%BA%E7%A1%80">JAVABasic</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/JAVA%E5%9F%BA%E7%A1%80">JAVABasic</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F">分布式</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/JAVA%E5%A4%9A%E7%BA%BF%E7%A8%8B">JAVA多线程</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/Linux">Linux</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F">分布式</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95">Algorithm</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/Linux">Linux</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/Spring">Spring</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95">Algorithm</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/Maven">Maven</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/Spring">Spring</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/MySQL">MySQL</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/Maven">Maven</a></li>
+		        
+					<li style="width: 8.333333333333334%"><a href="/tags/MySQL">MySQL</a></li>
 		        
 				</ul>
 			</nav>
@@ -197,6 +203,167 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-模板方法设计模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/16/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">模板方法设计模式</a>
+    </h1>
+  
+
+        
+        
+<a href="/2020/08/16/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2020-08-16T12:17:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Servlet规范中的HttpServlet是一个典型的模板方法设计模式。</p>
+<p>HTTPServlet是一个模板类</p>
+<p>其中的service(HttpServletRequest, HttpServletResponse)方法是典型的模板方法，在该方法中定义了核心算法骨架，doGet，doPost…具体的实现步骤延迟到子类中完成。</p>
+        
+          <a class="article-more-a" href="/2020/08/16/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/16/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HttpServlet原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/16/HttpServlet%E5%8E%9F%E7%90%86/">HttpServlet原理</a>
+    </h1>
+  
+
+        
+        
+<a href="/2020/08/16/HttpServlet%E5%8E%9F%E7%90%86/" class="archive-article-date">
+  	<time datetime="2020-08-16T08:58:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=36">https://www.bilibili.com/video/BV1vb41187jH?p=36</a></p>
+<h1 id="1-代码在每个Servlet类中都需要编写，如何封装"><a href="#1-代码在每个Servlet类中都需要编写，如何封装" class="headerlink" title="1. 代码在每个Servlet类中都需要编写，如何封装"></a>1. 代码在每个Servlet类中都需要编写，如何封装</h1><ul>
+<li><p>封装后在每一个具体的Servlet类中不写这样的代码，但是还能达到同样的效果。</p>
+</li>
+<li><p><code>HttpServlet</code>继承了<code>GenericServlet</code>，重写了Service方法，另外提供了<code>doPost</code>和<code>doGet</code>方法供子类调用</p>
+<p>子类Servlet处理POST请求，重写了<code>HTTPServlet</code>中的<code>doPost</code>方法，当前端传来的请求时POST请求时，<code>HttpServlet</code>中的service方法调用子类重写的<code>doPost</code>方法。但是当前端传来的请求错误的为GET请求时，<code>HttpServlet</code>中的service方法调用<code>HTTPServlet</code>中的默认的<code>doGet</code>方法，返回错误信息。</p>
+        
+          <a class="article-more-a" href="/2020/08/16/HttpServlet%E5%8E%9F%E7%90%86/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/16/HttpServlet%E5%8E%9F%E7%90%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-保证前端请求方式和后台处理方式一致" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -828,171 +995,6 @@
 
 
   
-    <article id="post-http状态码404500" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/14/http%E7%8A%B6%E6%80%81%E7%A0%81404500/">http状态码404500</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/14/http%E7%8A%B6%E6%80%81%E7%A0%81404500/" class="archive-article-date">
-  	<time datetime="2020-08-14T11:08:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>在webapp中常见的错误代码：</li>
-</ol>
-<ul>
-<li>404   -Not Found 【资源未找到：请求的资源路径写错了】</li>
-<li>500   -Sever Inner Error【服务器内部错误，这种情况一般都是java程序出现异常】</li>
-</ul>
-        
-          <a class="article-more-a" href="/2020/08/14/http%E7%8A%B6%E6%80%81%E7%A0%81404500/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/14/http%E7%8A%B6%E6%80%81%E7%A0%81404500/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-欢迎界面配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/14/%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2%E9%85%8D%E7%BD%AE/">欢迎界面配置</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/08/14/%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-08-14T10:45:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb41187jH?p=27">https://www.bilibili.com/video/BV1vb41187jH?p=27</a></p>
-<ol>
-<li><p>欢迎界面怎么设置</p>
-<ul>
-<li><p>假设在WebRoot目录下创建login.html，想让login.html作为整个webapp的欢迎界面，应该在web.xml中进行设置</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>login.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/08/14/%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2%E9%85%8D%E7%BD%AE/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/14/%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2%E9%85%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/7/">&lt; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/">Next &gt;</a>
@@ -1138,6 +1140,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JAVA多线程</a>
               </li>
             
             <div class="clearfix"></div>
